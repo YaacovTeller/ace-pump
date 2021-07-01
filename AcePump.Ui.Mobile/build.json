@@ -1,0 +1,20 @@
+{
+  "android": {
+    "release": {
+      "keystore": "..\\build-static\\app-signing\\com.acepumpinc.ptp.release.keystore",
+      "storePassword": "QgkjJJZaQYZpF4WMKxcf",
+      "alias": "PtpReleaseYyk",
+      "password": "QgkjJJZaQYZpF4WMKxcf",
+      "keystoreType": "pkcs12"
+    }
+  },
+  "ios": {
+    "debug": {
+      "developmentTeam": "G9C9PKYQMU"
+    },
+    "release": {
+      "developmentTeam": "G9C9PKYQMU",
+      "codeSignIdentity": "iPhone Developer"
+    }
+  }
+ }

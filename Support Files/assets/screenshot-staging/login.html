@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ace Pump - Mobile</title>
+
+    <link href="ionic.min.css" rel="stylesheet">
+    <link href="app.css" rel="stylesheet" type="text/css">
+
+    <style type="text/css">
+        .platform-ios .manual-ios-statusbar-padding {
+            padding-top: 20px;
+        }
+
+        .manual-remove-top-padding {
+            padding-top: 0px;
+        }
+
+        .manual-remove-top-padding .scroll {
+            padding-top: 0px !important;
+        }
+
+        ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+
+        ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+            border-radius: 0px;
+            border-left: 0px;
+            border-right: 0px;
+        }
+
+        .show-list-numbers-and-dots ul {
+            list-style-type: disc;
+            padding-left: 40px;
+        }
+
+        .show-list-numbers-and-dots ol {
+            list-style-type: decimal;
+            padding-left: 40px;
+        }
+
+        html {
+            overflow: initial;
+        }
+
+        body {
+            overflow: initial;
+        }
+
+        .screenshot-container {
+            overflow: hidden;
+            background-color:rgb(90, 78, 66);
+        } 
+        
+        .screenshot-container-iphone {
+            width: 1242px;
+            height: 2208px;
+        }
+
+        .screenshot-container-ipad{
+            width: 2048px;
+            height: 2732px;
+        }
+    </style>
+</head>
+<body>
+    <div class="screenshot-container">
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+        </ion-nav-bar>
+
+        <ion-nav-view>
+            <ion-view title="login" hide-nav-bar="true" style="background-color:#5A4E42;">
+                <ion-content padding="true" class=" manual-remove-top-padding">
+                    <div class="padding scroll">
+                        <div class="padding-bottom padding-top">
+                            <img src="AcePumpLogoSm.jpg" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+                        </div>
+
+                        <div class="padding inlay" style="margin-top: 100px">
+                            <h1 style="color:#000000;text-align:center;" class="padding-bottom">Welcome!</h1>
+
+                            <form class="list">
+                                <label class="item item-input padding-top">
+                                    <input type="text" placeholder="Username">
+                                </label>
+
+                                <label class="item item-input">
+                                    <input type="password" placeholder="Password">
+                                </label>
+
+                                <button class="button button-positive button-block">Login</button>
+                            </form>
+                        </div>
+                    </div>
+                </ion-content>
+            </ion-view>
+        </ion-nav-view>
+    </div>
+</body>
+</html>

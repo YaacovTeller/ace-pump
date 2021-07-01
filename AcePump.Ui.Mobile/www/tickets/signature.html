@@ -1,0 +1,98 @@
+<ion-view title="details" hide-nav-bar="true" style="background-color:#5A4E42;">
+    <ion-content padding="true">
+        <div class="inlay">
+            <h3 class="padding-top inlay-text">{{signatureCtrl.currentTicket.DeliveryTicketID}} - {{detailsCtrl.currentTicket.CustomerName}}</h3>
+            <h4 class="inlay-text">{{signatureCtrl.currentTicket.LeaseName}} {{detailsCtrl.currentTicket.WellNumber}} {{detailsCtrl.currentTicket.TicketDate | date:'shortDate'}}</h4>
+            <div class="show-list-numbers-and-dots padding-left">
+                <p class="inlay-text">
+                    Pump Failed: {{signatureCtrl.currentTicket.PumpFailedNumber}}
+                </p>
+                <p class="inlay-text">
+                    Closed Ticket? {{signatureCtrl.currentTicket.CloseTicket ? "Yes" : "No"}}
+                </p>
+                <p class="inlay-text" ng-show="!signatureCtrl.currentTicket.CloseTicket">
+                    Reason Still Open: {{signatureCtrl.currentTicket.ReasonStillOpen}}
+                </p>
+            </div>
+        </div>
+        <div class="list card signature-details">
+            <table id="line-items-table" ng-show="signatureCtrl.lineItems.length">
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Item</th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="lineItem in signatureCtrl.lineItems">
+                    <tr>
+                        <td>{{lineItem.Quantity}}</td>
+                        <td>{{lineItem.Item}}</td>
+                    </tr>
+                </tbody>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>Sales Total</td><td><strong>{{signatureCtrl.signatureData.salesTotal | currency}}</strong></td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>Sales Tax @ <strong>{{signatureCtrl.signatureData.SalesTaxRate | percent }}</strong></td><td><strong>{{signatureCtrl.signatureData.taxOwed | currency}}</strong></td></tr>
+                <tr><td>&nbsp;</td><td>&nbsp;</td><td>Invoice Total</td><td><strong>{{signatureCtrl.signatureData.grandTotal | currency}}</strong></td></tr>
+            </table>
+
+            <div ng-show="signatureCtrl.currentTicket.HasSignature" class="signature-area">
+                <p>
+                    Signature:
+                </p>
+                <img ng-src="data:image;base64,{{signatureCtrl.signatureData.Signature}}" class="signature-pad" alt="Signature" />
+                <p>
+                    Signature Name: {{signatureCtrl.signatureData.SignatureName}}
+                </p>
+                <p>
+                    Company Name: {{signatureCtrl.signatureData.SignatureCompanyName}}
+                </p>
+                <p>
+                    Date: {{signatureCtrl.signatureData.SignatureDate | date}}
+                </p>
+                <div class="button-bar">
+                    <a class="button button-energized" ng-click="signatureCtrl.resign()">Sign Again</a>
+                </div>
+            </div>
+
+            <form name="signatureCtrl.signatureForm"
+                  ng-show="!signatureCtrl.currentTicket.HasSignature"
+                  ng-submit="signatureCtrl.signatureForm.$valid && signatureCtrl.saveSignature()" class="signature-area" novalidate>
+                <p>
+                    Please sign here:
+                </p>
+                <acp-signature-pad ng-model="signatureCtrl.signatureData.Signature" name="signature" required></acp-signature-pad>
+                <p ng-show="signatureCtrl.signatureForm.$submitted && signatureCtrl.signatureForm.signature.$invalid" style="color:red">Signature is required.</p>
+                <div class="button-bar signature-clear-button">
+                    <button type="button" class="button button-energized" ng-click="signatureCtrl.signatureData.Signature = ''">Clear Signature</button>
+                </div>
+
+
+                <div class="list">
+                    <label class="item item-input">
+                        <input type="text" name="signatureName" placeholder="Signature Name" ng-model="signatureCtrl.signatureData.SignatureName" required />
+                    </label>
+                    <p ng-show="signatureCtrl.signatureForm.$submitted && signatureCtrl.signatureForm.signatureName.$invalid" style="color:red">Signature name is required.</p>
+
+                    <label class="item item-input">
+                        <input type="text" placeholder="Company Name" ng-model="signatureCtrl.signatureData.SignatureCompanyName" />
+                    </label>
+
+                    <label class="item item-input">
+                        Date: {{signatureCtrl.signatureData.SignatureDate | date}}
+                    </label>
+                </div>
+
+                <div class="button-bar">                    
+                    <button type="submit" class="button button-balanced">Save</button>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="bar">
+        <div class="button-bar">
+            <a ng-click="signatureCtrl.goBack();" class="button icon ion-chevron-left"></a>
+            <a></a>
+            <a ui-sref="top.logout" class="button button-positive button-clear">Logout</a>
+        </div>
+    </ion-footer-bar>
+</ion-view>

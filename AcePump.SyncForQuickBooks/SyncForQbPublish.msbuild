@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="SyncForQbPublish" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition="'$(Configuration)' == ''">Alpha</Configuration>
+        <SyncForQbTarget>publish</SyncForQbTarget>
+        <SyncForQbProjectFile>$(MSBuildProjectDirectory)\AcePump.SyncForQuickBooks.vbproj</SyncForQbProjectFile>
+    </PropertyGroup>
+    
+    <PropertyGroup Condition="'$(Configuration)' == 'Alpha'">
+        <PublishDir>..\HostingSpaces\AcePump Downloads\Alpha\Ace-Pump-Sync-for-QuickBooks\</PublishDir>
+        <UpdateUrl>https://acepumpalphadownloads.blob.core.windows.net/ace-pump-sync-for-quickbooks/</UpdateUrl>
+        <InstallUrl>https://acepumpalphadownloads.blob.core.windows.net/ace-pump-sync-for-quickbooks/</InstallUrl>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)' != 'Alpha'">
+        <PublishDir>..\HostingSpaces\AcePump Downloads\Release\Ace-Pump-Sync-for-QuickBooks\</PublishDir>
+        <UpdateUrl>http://downloads.acepumpinc.com/ace-pump-sync-for-quickbooks/</UpdateUrl>
+        <InstallUrl>http://downloads.acepumpinc.com/ace-pump-sync-for-quickbooks/</InstallUrl>        
+    </PropertyGroup>
+   
+    <Target Name="SyncForQbPublish">
+        <MSBuild
+            Projects="$(SyncForQbProjectFile)"
+            Targets="$(SyncForQbTarget)"
+            Properties="PublishDir=$(PublishDir);UpdateUrl=$(UpdateUrl);InstallUrl=$(InstallUrl);Configuration=$(Configuration);IsWebBootstrapper=True"
+            >
+        </MSBuild>
+    </Target>
+</Project>

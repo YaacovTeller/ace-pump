@@ -1,0 +1,12 @@
+<ion-view title="Take Picture" hide-back-button="true" hide-nav-bar="true" >
+    <ion-content>
+        <img ng-show="takePictureCtrl.imgURI !== undefined" ng-src="{{takePictureCtrl.imgURI}}" style="text-align: center; width:100vw">
+    </ion-content>
+    <ion-footer-bar class="bar">
+        <div class="button-bar">
+            <a ng-click="$ionicGoBack()" class="button icon ion-chevron-left"></a>
+            <a ng-click="takePictureCtrl.takePicture()" class="button icon ion-android-camera"></a>
+            <a ng-click="takePictureCtrl.savePicture()" class="button icon ion-android-done"></a>
+        </div>
+    </ion-footer-bar>
+</ion-view>

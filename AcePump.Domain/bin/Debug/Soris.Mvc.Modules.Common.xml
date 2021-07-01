@@ -1,0 +1,138 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Soris.Mvc.Modules.Common
+</name>
+</assembly>
+<members>
+<member name="T:Soris.Mvc.Modules.Common.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Soris.Mvc.Modules.Common.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Soris.Mvc.Modules.Common.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:Soris.Mvc.Modules.Common.Configuration.ConfigurationBase.AddPartialToView(System.String,System.String,Soris.Mvc.Modules.Common.EmbeddedViews.AdditionalViewRenderPostion)">
+ <summary>
+ The name of a partial view to render inside one of the primary views.  This can be used
+ to manage custom fields in your model.
+ </summary>
+ <param name="view">The name of the main view to add this partial view to.  This will normally be the same as the action name.</param>
+ <param name="partialViewName">The name of the partial view to render.  Make sure this is in your partial view search path.</param>
+ <param name="position">Where to render the partial view on the page.</param>
+</member>
+<member name="M:Soris.Mvc.Modules.Common.Configuration.Fluent.ConfiguratorBase`2.Permissions(System.Action{Soris.Mvc.Modules.Common.Configuration.Fluent.ControllerPermissionsConfigurator})">
+ <summary>
+ Configures the permissions for actions in this controller
+ </summary>
+</member>
+<member name="M:Soris.Mvc.Modules.Common.Configuration.Fluent.ConfiguratorBase`2.DataSourceTypeName(System.String)">
+ <summary>
+ Configure this controller to get its data by constructing an object of the specified type.
+ </summary>
+ <param name="typeName">Assembly qualified type name.</param>
+</member>
+<member name="M:Soris.Mvc.Modules.Common.Configuration.Fluent.ConfiguratorBase`2.DataSourceFactoryMethod(System.String,System.String)">
+ <summary>
+ Configure this controller to get its data from the specified factory method.
+ </summary>
+ <param name="factoryTypeName">Assembly qualified type name of the factory.</param>
+ <param name="factoryMethodName">Factory method name.</param>
+</member>
+<member name="M:Soris.Mvc.Modules.Common.Configuration.Fluent.ConfiguratorBase`2.EmbeddedViewPrefix(System.String)">
+ <summary>
+ The prefix all common controllers will use to refer to their views.  This should not conflict
+ with any actual views you have in your project.
+ 
+ DEFAULT: ~/EmbeddedViews/
+ </summary>
+</member>
+<member name="M:Soris.Mvc.Modules.Common.Configuration.Fluent.ControllerPermissionsConfigurator.Action(System.String,System.String[])">
+ <summary>
+ Defines permissions for a specific action by the action's name.  This permission
+ applies to all actions with matching names regardless of other action filters you
+ may have in place.
+ 
+ To allow anonymous access to an action, use an empty array of allowed roles.
+ </summary>
+</member>
+<member name="M:Soris.Mvc.Modules.Common.Configuration.Fluent.ControllerPermissionsConfigurator.Default(System.String[])">
+ <summary>
+ Defines the default permissions for the controller.  Any which does not have a specific permission
+ configuration via <see cref="M:Soris.Mvc.Modules.Common.Configuration.Fluent.ControllerPermissionsConfigurator.Action(System.String,System.String[])">Action</see> will use this permission.
+ 
+ To allow anonymous access by default, use an empty array of allowed roles.
+ </summary>
+</member>
+<member name="M:Soris.Mvc.Modules.Common.Configuration.GetHandlerAttribute.#ctor(System.String,System.String,System.String,System.String)">
+ <param name="forAction">The action during which this handler should execute.</param>
+ <param name="modelParameterName">The name of the parameter which takes the model being modified by the current action.</param>
+ <param name="dataSourceParameterName">The name of the parameter which takes the data source being used in the current action.</param>
+ <param name="viewDataParameterName">The name of the parameter which takes a <see cref="T:System.Collections.Specialized.NameValueCollection">NameValueCollection</see> of posted data.</param>
+</member>
+<member name="M:Soris.Mvc.Modules.Common.Configuration.PostHandlerAttribute.#ctor(System.String,System.String,System.String,System.String)">
+ <param name="forAction">The action during which this handler should execute.</param>
+ <param name="modelParameterName">The name of the parameter which takes the model being modified by the current action.</param>
+ <param name="dataSourceParameterName">The name of the parameter which takes the data source being used in the current action.</param>
+ <param name="postDataParameterName">The name of the parameter which takes a <see cref="T:System.Collections.Specialized.NameValueCollection">NameValueCollection</see> of posted data.</param>
+</member>
+<member name="P:Soris.Mvc.Modules.Common.Controllers.CommonControllerBase`2.Configuration">
+ <summary>
+ The configuration values for the controller set during application initialization.
+ </summary>
+</member>
+<member name="M:Soris.Mvc.Modules.Common.Controllers.CommonControllerBase`2.EmbeddedView">
+ <summary>
+ Creates a view result where the view is embedded in the assembly which contains the controller.
+ </summary>
+</member>
+<member name="M:Soris.Mvc.Modules.Common.Controllers.CommonControllerBase`2.EmbeddedView(System.Object)">
+ <summary>
+ Creates a view result where the view is embedded in the assembly which contains the controller.
+ </summary>
+</member>
+<member name="M:Soris.Mvc.Modules.Common.Controllers.CommonControllerBase`2.EmbeddedView(System.String)">
+ <summary>
+ Creates a view result where the view is embedded in the assembly which contains the controller.
+ </summary>
+</member>
+<member name="M:Soris.Mvc.Modules.Common.Controllers.CommonControllerBase`2.EmbeddedView(System.String,System.String)">
+ <summary>
+ Creates a view result where the view is embedded in the specified assembly.
+ </summary>
+</member>
+<member name="M:Soris.Mvc.Modules.Common.Controllers.CommonControllerBase`2.EmbeddedView(System.String,System.String,System.Object)">
+ <summary>
+ Creates a view result where the view is embedded in the specified assembly.
+ </summary>
+</member>
+<member name="T:Soris.Mvc.Modules.Common.EmbeddedViews.EmbeddedResourcePathProvider">
+ <summary>
+ The EmbeddedResourcePathProvider allows you to embed views directly into your assemblies.  The views are "stored" in
+ a virtual file path at ~/EmbeddedView/Embedded Resource name.  You can optionally supply a fully qualified assembly name
+ where the views are embedded.  If no name is supplied, the calling assembly is used.  The virtual path provider converts
+ this path into a stream to the appropriate embedded resource and provides tools to produce the initial path.
+ </summary>
+</member>
+<member name="M:Soris.Mvc.Modules.Common.EmbeddedViews.EmbeddedResourcePathProvider.MakeEmbeddedResourcePath(System.String)">
+ <summary>
+ Creates a virtual path to a view embedded as a resource in an assembly.  This overload uses
+ the assembly which calls the method as the assembly the resource is stored in.
+ 
+ NOTE: You might have to use [MethodImple(MethodImplOptions.NoInlining)] on the calling method if
+ your code moves through several assemblies to avoid inlining issues.
+ </summary>
+ <param name="viewName">Name of the embedded resource containing the view.</param>
+</member>
+</members>
+</doc>

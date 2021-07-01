@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CC6B1E1A-3CFF-4FF7-A9AD-411B449743CB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>AcePump.SyncForQuickBooks</RootNamespace>
+    <AssemblyName>AcePump.SyncForQuickBooks</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Ace Pump Sync for QuickBooks</ProductName>
+    <PublisherName>Ace Pump, Inc.</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>Publish.htm</WebPage>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>2.1.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>AcePump.SyncForQuickBooks.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>AcePump.SyncForQuickBooks.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Alpha|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Alpha\</OutputPath>
+    <DocumentationFile>AcePump.SyncForQuickBooks.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>6C236C6F8E9ABED228CAB1BB6B1D2A05AF265FA8</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>AcePump.SyncForQuickBooks_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Beta|x86'">
+    <OutputPath>bin\x86\Beta\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.QBFC13, Version=13.0.0.23, Culture=neutral, PublicKeyToken=31d8aec643e18259">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\lib\Interop.QBFC13.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\lib\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExceptionForm.Designer.vb">
+      <DependentUpon>ExceptionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.vb" />
+    <Compile Include="PtpApi\Models\DeliveryTicketModel.vb" />
+    <Compile Include="PtpApi\Models\LineItemModel.vb" />
+    <Compile Include="Qb\Models\QbCustomerModel.vb" />
+    <Compile Include="Qb\Models\QbItemModel.vb" />
+    <Compile Include="Qb\QbSyncContext.vb" />
+    <Compile Include="UI\DeliveryTicketProcessingContext.vb" />
+    <Compile Include="UI\Models\InvoiceLineItemUIModel.vb" />
+    <Compile Include="UI\Models\InvoiceUIModel.vb" />
+    <Compile Include="UI\Models\RunningInvoiceStatus.vb" />
+    <Compile Include="UI\Models\RunningInvoiceSearchResult.vb" />
+    <Compile Include="UI\Models\WorkerFormModel.vb" />
+    <Compile Include="UI\RunningInvoicePromptDialog.Designer.vb">
+      <DependentUpon>RunningInvoicePromptDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RunningInvoicePromptDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UIChangeOnProgress.vb" />
+    <Compile Include="UI\Tasks\UICountReadyDeliveryticketsTask.vb" />
+    <Compile Include="UI\UIProgressDto.vb" />
+    <Compile Include="PtpApi\ApiConnector.vb" />
+    <Compile Include="PtpApi\ApiTokenResponse.vb" />
+    <Compile Include="PtpApi\ApiTokenResponseType.vb" />
+    <Compile Include="Qb\QbCountySalesTaxRateManager.vb" />
+    <Compile Include="UI\CancelDialog.Designer.vb">
+      <DependentUpon>CancelDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CancelDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\QbAuthorizationInstructions.Designer.vb">
+      <DependentUpon>QbAuthorizationInstructions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\QbAuthorizationInstructions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SyncLogin.Designer.vb">
+      <DependentUpon>SyncLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SyncLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ChooseCustomerForm.Designer.vb">
+      <DependentUpon>ChooseCustomerForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChooseCustomerForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ChoosePartForm.Designer.vb">
+      <DependentUpon>ChoosePartForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChoosePartForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UIProgressStage.vb" />
+    <Compile Include="UI\CreateNewQbCustomerForm.Designer.vb">
+      <DependentUpon>CreateNewQbCustomerForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CreateNewQbCustomerForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FindPartInQbForm.Designer.vb">
+      <DependentUpon>FindPartInQbForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FindPartInQbForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Qb\QbCacheService.vb" />
+    <Compile Include="Qb\QbCreateResponse.vb" />
+    <Compile Include="UI\Tasks\UIProcessDeliveryTicketTask.vb" />
+    <Compile Include="UI\Validation\DeliveryTicketValidationResult.vb" />
+    <Compile Include="UI\Validation\LineItemValidationResult.vb" />
+    <Compile Include="UI\Validation\QbDeliveryTicketValidator.vb" />
+    <Compile Include="Qb\QbPartIDManager.vb" />
+    <Compile Include="Qb\QbSession.vb" />
+    <Compile Include="UI\UIProgressReporter.vb" />
+    <Compile Include="Qb\QbDeliveryTicketSyncer.vb" />
+    <Compile Include="Qb\QbCustomerIDManager.vb" />
+    <Compile Include="UI\SyncForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SyncForm.Designer.vb">
+      <DependentUpon>SyncForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UI\SyncSummaryForm.Designer.vb">
+      <DependentUpon>SyncSummaryForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SyncSummaryForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Validation\DeliveryTicketValidationFailureReason.vb" />
+    <Compile Include="UI\Validation\LineItemValidationFailureReason.vb" />
+    <Compile Include="UI\Validation\ValidationContext.vb" />
+    <Compile Include="UI\WorkerForm.Designer.vb">
+      <DependentUpon>WorkerForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WorkerForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Tasks\IUITask.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExceptionForm.resx">
+      <DependentUpon>ExceptionForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CancelDialog.resx">
+      <DependentUpon>CancelDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\QbAuthorizationInstructions.resx">
+      <DependentUpon>QbAuthorizationInstructions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RunningInvoicePromptDialog.resx">
+      <DependentUpon>RunningInvoicePromptDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SyncLogin.resx">
+      <DependentUpon>SyncLogin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ChooseCustomerForm.resx">
+      <DependentUpon>ChooseCustomerForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ChoosePartForm.resx">
+      <DependentUpon>ChoosePartForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CreateNewQbCustomerForm.resx">
+      <DependentUpon>CreateNewQbCustomerForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FindPartInQbForm.resx">
+      <DependentUpon>FindPartInQbForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SyncForm.resx">
+      <DependentUpon>SyncForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SyncSummaryForm.resx">
+      <DependentUpon>SyncSummaryForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\WorkerForm.resx">
+      <DependentUpon>WorkerForm.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="SyncForQbPublish.msbuild">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AcePump.Common\AcePump.Common.vbproj">
+      <Project>{80BF899C-F14C-4380-8F95-55290638E5B4}</Project>
+      <Name>AcePump.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AcePump.QbApi\AcePump.QbApi.vbproj">
+      <Project>{62F6C982-56D2-498D-AC67-0D16AB193A6A}</Project>
+      <Name>AcePump.QbApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="QBFC13_0Installer">
+      <Visible>False</Visible>
+      <ProductName>QBFC13_0Installer</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.Web.Infrastructure">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="System.Web.Mvc">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="System.Web.Razor">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="System.Web.WebPages">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="System.Web.WebPages.Deployment">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="System.Web.WebPages.Razor">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading-image.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QbAuthorizationDialog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\JaggedEdgesQbDialog.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <GenerateBootstrapperSdkPath>$(MSBuildProjectDirectory)\InstallerResources\BootstrapperSDK</GenerateBootstrapperSdkPath>
+  </PropertyGroup>
+</Project>

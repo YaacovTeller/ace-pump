@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{030A998E-A0F1-4C45-BBD7-B944E5FFD7C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AcePump.Domain</RootNamespace>
+    <AssemblyName>AcePump.Domain</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>AcePump.Domain.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>AcePump.Domain.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Beta|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Beta\</OutputPath>
+    <DocumentationFile>AcePump.Domain.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Alpha|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Alpha\</OutputPath>
+    <DocumentationFile>AcePump.Domain.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CodeFirstStoreFunctions">
+      <HintPath>..\lib\CodeFirstStoreFunctions.dll</HintPath>
+    </Reference>
+    <Reference Include="DelegateDecompiler, Version=1.0.0.0, Culture=neutral, PublicKeyToken=93b26a10a04705bd, processorArchitecture=MSIL">
+      <HintPath>..\packages\DelegateDecompiler.0.23.0\lib\net40-client\DelegateDecompiler.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Reflection, Version=1.1.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Reflection.1.1.0.0\lib\Mono.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="Soris.Mvc.Modules.TypeManager">
+      <HintPath>..\lib\Soris.Mvc.Modules.TypeManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Data" />
+    <Reference Include="Yesod, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9c89192f54d8618c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Yesod.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BL\DeliveryTicketImageUploadRepository.vb" />
+    <Compile Include="BL\LineItemInfoExtended.vb" />
+    <Compile Include="BL\LineItemService.vb" />
+    <Compile Include="BL\Runtimes\AdjacentRuntimes.vb" />
+    <Compile Include="BL\Runtimes\DeliveryTicketEventModel.vb" />
+    <Compile Include="BL\Runtimes\ExistingRuntimeQuery.vb" />
+    <Compile Include="BL\Runtimes\FluentRuntimeManager.vb" />
+    <Compile Include="BL\Runtimes\HandlesEventModelAttribute.vb" />
+    <Compile Include="BL\Runtimes\IEventModel.vb" />
+    <Compile Include="BL\Runtimes\IRuntimeManager.vb" />
+    <Compile Include="BL\Runtimes\PartInspectedEventHandler.vb" />
+    <Compile Include="BL\Runtimes\DeliveryTicketEventHandler.vb" />
+    <Compile Include="BL\Runtimes\PartInspectionEventModel.vb" />
+    <Compile Include="BL\Runtimes\PartRuntimeManager.vb" />
+    <Compile Include="BL\Runtimes\PartRuntimeSegmentManager.vb" />
+    <Compile Include="BL\Runtimes\PumpRuntimeManager.vb" />
+    <Compile Include="BL\Runtimes\RuntimeEventHandler.vb" />
+    <Compile Include="BL\Runtimes\RuntimeEventHandlerCache.vb" />
+    <Compile Include="BL\Runtimes\RuntimeEventManager.vb" />
+    <Compile Include="BL\PartInspectionOrderer.vb" />
+    <Compile Include="BL\Runtimes\RuntimeExtensions.vb" />
+    <Compile Include="BL\Runtimes\RuntimeManagerFactory.vb" />
+    <Compile Include="BL\Runtimes\RuntimeQueryHelper.vb" />
+    <Compile Include="BL\Runtimes\RuntimeManagerBase.vb" />
+    <Compile Include="BL\StreamableDownload.vb" />
+    <Compile Include="Configurations\AccountDataStoreUserConfiguration.vb" />
+    <Compile Include="Configurations\AcePumpProfileConfiguration.vb" />
+    <Compile Include="Configurations\AssemblyConfiguration.vb" />
+    <Compile Include="Configurations\CountySalesTaxRateConfiguration.vb" />
+    <Compile Include="Configurations\CustomerConfiguration.vb" />
+    <Compile Include="Configurations\CustomerPartSpecialConfiguration.vb" />
+    <Compile Include="Configurations\DeliveryTicketConfiguration.vb" />
+    <Compile Include="Configurations\HasUniqueIndexAnnotationExtension.vb" />
+    <Compile Include="Configurations\LineItemConfiguration.vb" />
+    <Compile Include="Configurations\Log_HttpRequestConfiguration.vb" />
+    <Compile Include="Configurations\Log_HttpRequestParamConfiguration.vb" />
+    <Compile Include="Configurations\PartCategoryConfiguration.vb" />
+    <Compile Include="Configurations\PartInspectionConfiguration.vb" />
+    <Compile Include="Configurations\PartRuntimeConfiguration.vb" />
+    <Compile Include="Configurations\PartRuntimeSegmentConfiguration.vb" />
+    <Compile Include="Configurations\PartTemplateConfiguration.vb" />
+    <Compile Include="Configurations\PumpConfiguration.vb" />
+    <Compile Include="Configurations\PumpRuntimeConfiguration.vb" />
+    <Compile Include="Configurations\PumpTemplateConfiguration.vb" />
+    <Compile Include="Configurations\RoleConfiguration.vb" />
+    <Compile Include="Configurations\SoldByOptionConfiguration.vb" />
+    <Compile Include="Configurations\TemplatePartDefConfiguration.vb" />
+    <Compile Include="Configurations\WellConfiguration.vb" />
+    <Compile Include="DataSourceFactory.vb" />
+    <Compile Include="DataSourceSeeders\DropAndSeedSeeder.vb" />
+    <Compile Include="DataSourceSeeders\IDataSourceSeeder.vb" />
+    <Compile Include="DataSource\AcePumpAppleTestingDbContext.vb" />
+    <Compile Include="DataSource\AcePumpContext.vb" />
+    <Compile Include="Models\AcePumpProfile.vb" />
+    <Compile Include="Models\ApiToken.vb" />
+    <Compile Include="Models\Assembly.vb" />
+    <Compile Include="Models\AssemblyWithRelatedParts.vb" />
+    <Compile Include="Models\CountySalesTaxRate.vb" />
+    <Compile Include="Models\CustomerPartSpecial.vb" />
+    <Compile Include="Models\Customer.vb" />
+    <Compile Include="Models\DeliveryTicketImageUpload.vb" />
+    <Compile Include="Models\IRuntime.vb" />
+    <Compile Include="Models\Log_HttpRequest.vb" />
+    <Compile Include="Models\Log_HttpRequestParam.vb" />
+    <Compile Include="Models\Part.vb" />
+    <Compile Include="Models\PartRuntime.vb" />
+    <Compile Include="Models\PartRuntimeSegment.vb" />
+    <Compile Include="Models\ShopLocation.vb" />
+    <Compile Include="Models\PumpRuntime.vb" />
+    <Compile Include="Models\PumpTemplateNameBuilder.vb" />
+    <Compile Include="Models\Lease.vb" />
+    <Compile Include="Models\LineItem.vb" />
+    <Compile Include="Models\Material.vb" />
+    <Compile Include="Models\PartTemplate.vb" />
+    <Compile Include="Models\AssemblyPartDef.vb" />
+    <Compile Include="Models\PartCategory.vb" />
+    <Compile Include="Models\QbInvoiceClass.vb" />
+    <Compile Include="Models\SoldByOption.vb" />
+    <Compile Include="Models\Pump.vb" />
+    <Compile Include="Models\PumpBarrel.vb" />
+    <Compile Include="Models\PumpPlunger.vb" />
+    <Compile Include="Models\PumpSeating.vb" />
+    <Compile Include="Models\PumpTemplate.vb" />
+    <Compile Include="Models\PartInspection.vb" />
+    <Compile Include="Models\DeliveryTicket.vb" />
+    <Compile Include="Models\TemplatePartDef.vb" />
+    <Compile Include="Models\Well.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ReportDefinitions\DtUnpricedReportDefinition.vb" />
+    <Compile Include="ReportDefinitions\PumpTemplateReportDefinition.vb" />
+    <Compile Include="ReportDefinitions\TearDownReportDefinition.vb" />
+    <Compile Include="ReportDefinitions\RepairReportDefinition.vb" />
+    <Compile Include="ReportDefinitions\DtReportDefinition.vb" />
+    <Compile Include="TelerikReportsRepository.vb" />
+    <Compile Include="Udf.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Rdlc\DeliveryTicketReport.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Rdlc\DeliveryTicketReportUnpriced.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Rdlc\PumpTemplateReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Rdlc\RepairTicketReport.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Rdlc\TearDownReport.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AcePump.Common\AcePump.Common.vbproj">
+      <Project>{80BF899C-F14C-4380-8F95-55290638E5B4}</Project>
+      <Name>AcePump.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AcePump.Rdlc\AcePump.Rdlc.csproj">
+      <Project>{6907dba2-e525-4bfb-94e6-d5c5a37b8b6d}</Project>
+      <Name>AcePump.Rdlc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Rdlc\AcePumpReportLogo.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

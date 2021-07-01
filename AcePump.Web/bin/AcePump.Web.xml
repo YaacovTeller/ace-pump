@@ -1,0 +1,80 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+AcePump.Web
+</name>
+</assembly>
+<members>
+<member name="T:AcePump.Web.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:AcePump.Web.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:AcePump.Web.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:AcePump.Web.Areas.Employees.Controllers.DeliveryTicketController.DeleteRepairTicketGeneratedLineItems(AcePump.Domain.Models.DeliveryTicket)">
+ <summary>
+ Deletes all line items from the ticket which were originall created by
+ a repair ticket.
+ </summary>
+</member>
+<member name="M:AcePump.Web.Areas.Employees.Controllers.DeliveryTicketController.GenerateLineItemsFromRepair(AcePump.Domain.Models.DeliveryTicket)">
+ <summary>
+ Creates line items based on failing repairs.  Moves any existing manually added line items
+ to the end of the list of line items.
+ </summary>
+</member>
+<member name="M:AcePump.Web.Areas.Employees.Controllers.DeliveryTicketController.ValidateInspectionResult(AcePump.Web.Areas.Employees.Models.DisplayDtos.PartInspectionGridRowModel,AcePump.Domain.Models.PartInspection)">
+ <summary>
+ Business rules for different result types.  For example, a replace or convert needs a replacement quantity.
+ </summary>
+</member>
+<member name="M:AcePump.Web.Controllers.HistoryController.GetDesignChanges(AcePump.Web.Models.AcePumpWidgetRequestGroup)">
+ <summary>
+ Load all significant design changes that match the global query (ie for this customer/lease/well)
+ </summary>
+</member>
+<member name="M:AcePump.Web.Controllers.HistoryController.ProcessGlobalRequest(AcePump.Web.Models.AcePumpWidgetRequestGroup)">
+ <summary>
+ Verifies that any well / customer / lease requests are accessible by the currently logged on user and provides
+ info from the DB about each of them.
+ </summary>
+</member>
+<member name="T:AcePump.Web.Models.CategoryChartNote">
+ <summary>
+ Represents a note which will be shown on all matching charts.
+ </summary>
+</member>
+<member name="P:AcePump.Web.Models.CategoryChartNote.value">
+ <summary>
+ The value on the chart to show the note at.  This should be a string
+ value which matches what's printed on the x-axis.
+ </summary>
+</member>
+<member name="P:AcePump.Web.Models.CategoryChartNote.valueType">
+ <summary>
+ The type of value. Can be a string, date, number, float, etc.
+ </summary>
+</member>
+<member name="P:AcePump.Web.Models.CategoryChartNote.link">
+ <summary>
+ The URL to open when the note is clicked.
+ </summary>
+</member>
+<member name="P:AcePump.Web.Models.CategoryChartNote.text">
+ <summary>
+ The text to show on the chart.
+ </summary>
+</member>
+</members>
+</doc>

@@ -1,0 +1,527 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Yesod
+</name>
+</assembly>
+<members>
+<member name="T:Yesod.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Yesod.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Yesod.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:Yesod.Ef.CustomColumns.ConcatenatedColumn`2">
+ <summary>
+ Provides support for concatenating columns in .NET code while using an ORM.  This class can generate
+ LINQ expressions for filtering, sorting, etc, based on the underlying evaulation expression.
+ </summary>
+</member>
+<member name="T:Yesod.Ef.CustomColumns.ConcatenatedColumnFilterDescriptor`2">
+ <summary>
+ Provides support for evaluated column definitions to the Kendo grid filter system.  This descriptor
+ automatically converts incoming filter requests for concatenated (evaluated) columns into requests for the
+ underlying properties of those columns.  This prevents EF "no such column" errors.
+ </summary>
+ <typeparam name="TEntity">The type of entity being filtered</typeparam>
+ <typeparam name="TProperty">The type returned by the property being filtered</typeparam>"
+</member>
+<member name="M:Yesod.Ef.CustomColumns.ConcatenatedColumnFilterDescriptor`2.GetFilterValue">
+ <summary>
+ Creates a ConstantExpression representing the filter value represented in the column type.  This method
+ throws a ConversionException if it cannot convert the filter to the column type.
+ </summary>
+</member>
+<member name="M:Yesod.Ef.CustomColumns.CustomColumnExtensions.ContainsCustomColumns``1(Kendo.Mvc.UI.Fluent.GridColumnFactory{``0})">
+ <summary>
+ Automatically configures the Kendo grid to handle Soris.Kendo.CustomColumn columns.  You
+ must call this after you have added the last column.
+ </summary>
+</member>
+<member name="M:Yesod.Ef.EfExtensions.LoadChanges``1(System.Data.Entity.IDbSet{``0},System.Object,``0@)">
+ <summary>
+ Loads the changes represented in the model to the matching entity inside IDbSet.  The entity is found by
+ matching the model's key property to the entity's key property.  The model must contain a property with
+ the same name as the entity key or this method will not find a match.
+ </summary>
+ <returns>True if the entity was found and changes were loaded, otherwise False.</returns>
+</member>
+<member name="M:Yesod.Ef.EfExtensions.LoadNew``1(System.Data.Entity.IDbSet{``0},System.Object)">
+ <summary>
+ Creates a new entity in the IDbSet with the values in the model.
+ </summary>
+ <returns>The newly created entity.</returns>
+</member>
+<member name="P:Yesod.ExceptionHandler.FogBugzLogger.SubmitAsUser">
+ <summary>
+ The full name of the FogBugz user the case creation or edit should be made as. We recommend using a Virtual User for this.
+ </summary>
+</member>
+<member name="P:Yesod.ExceptionHandler.FogBugzLogger.Project">
+ <summary>
+ The Project that new cases should be created in (must be a valid project name). Note that if BugzScout appends to an existing case, this field is ignored.
+ </summary>
+</member>
+<member name="P:Yesod.ExceptionHandler.FogBugzLogger.Area">
+ <summary>
+ The Area that new cases should go into (must be a valid area in the FogBugz Project). Note that if BugzScout appends to an existing case, this field is ignored.
+ </summary>
+</member>
+<member name="P:Yesod.ExceptionHandler.FogBugzLogger.Email">
+ <summary>
+ An email address to associate with the report, often the customer’s email. This overwrites the correspondent field on the case with each appended occurrence, so it is automatically included at the end of the case event as well.
+ </summary>
+</member>
+<member name="P:Yesod.ExceptionHandler.FogBugzLogger.DefaultMessage">
+ <summary>
+ This is the default text that will be returned by the HTTP post request. If the submission is appended to an existing case, and that case has some text in the “Scout Message” field, then that text will be returned instead. This is useful when you want to let your first user experiencing a crash know that “we are investigating the issue,” but update that message in the case later on when you know that “this problem is fixed in the next version.”
+ </summary>
+</member>
+<member name="P:Yesod.ExceptionHandler.FogBugzLogger.AlwaysCreateNewBug">
+ <summary>
+ By default, FogBugz combines all bugs that have the same description.  Set this to true to create a new bug regardless of other matching bugs.
+ </summary>
+</member>
+<member name="P:Yesod.ExceptionHandler.FogBugzLogger.BugDescriptionPrefix">
+ <summary>
+ A string which is prepended to the bug description.  Usually the app name and version, like Yesod Common Lib 1.0.0
+ </summary>
+</member>
+<member name="T:Yesod.Kendo.GridFilterExtractor`1">
+ <summary>
+ Used to extract filters from a Kendo.Mvc.DataSourceRequest that are not part of the final
+ projected object for filtering in the server side code.
+ </summary>
+ <typeparam name="TGlobalFilter">A class with properties for each filter you want to extract.</typeparam>
+</member>
+<member name="M:Yesod.Kendo.GridFilterExtractor`1.#ctor(System.Func{Kendo.Mvc.FilterDescriptor,`0,System.Boolean})">
+ <summary>
+ Creates a GridFilterExtractor.  TGlobalFilter is a class with properties for each filter
+ you want to extract.  The matcher is a callback that gets each filter in the DataSourceRequest
+ and the TGlobalFilter to be returned.  Set the appropriate properites in the TGlobalFilter then
+ return true if a filter matched or false if it did not.
+ </summary>
+ <param name="matcher">A callback to match filters that should be extracted</param>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Kendo.GridFilterExtractor`1.Extract(Kendo.Mvc.UI.DataSourceRequest,System.Func{Kendo.Mvc.FilterDescriptor,`0,System.Boolean})">
+ <summary>
+ Extracts each matching filter from the DataSourceRequest and stores it in the a TGlobalFilter.  This
+ method modifies the original DataSourceRequest.
+ </summary>
+ <typeparam name="TGlobalFilter">A class with properties for each filter you want to extract.</typeparam>
+ <param name="req">The DataSourceRequest containing the filters to extract.</param>
+ <param name="matcher">A callback to check each filter in the request.  If the filter matches, load it into the TGlobalFilter and return true, otherwise return false.</param>
+ <returns>The filters in a TGlobalFilter object.</returns>
+</member>
+<member name="M:Yesod.Kendo.GridFilterExtractor`1.Extract(Kendo.Mvc.UI.DataSourceRequest)">
+ <summary>
+ Extract matching filters from the DataSourceRequest and return them in a TGlobalFilter object.
+ WARNING: This method modified the original DataSourceRequest to remove matching filters.
+ </summary>
+</member>
+<member name="T:Yesod.Mvc.KendoGridRequestManager`2">
+ <summary>
+ Provides a JSON CRUD interface for Kendo grid.
+ </summary>
+ <typeparam name="TEntity">The type of entities backing the grid.  NOT the row model type for rows in the grid.</typeparam>
+ <typeparam name="TModel">The model type used for the grid.</typeparam>
+</member>
+<member name="M:Yesod.Mvc.KendoGridRequestManager`2.#ctor(System.Data.Entity.DbContext,System.Linq.Expressions.Expression{System.Func{`0,`1}},System.Linq.Expressions.Expression{System.Func{`0,System.Int32}},System.Web.Mvc.Controller)">
+ <param name="dataSource">The DataSource to perform CRUD operations on.</param>
+ <param name="modelSelector">The selector which will convert the DataSource entity into a grid model.</param>
+ <param name="parentIdSelector">The property of the child object (TEntity) which stores the parent entity ID.  Use null if no parent entity exits.</param>
+ <param name="controller">The controller executing the current request.</param>
+</member>
+<member name="M:Yesod.Mvc.KendoGridRequestManager`2.List(System.Int32,Kendo.Mvc.UI.DataSourceRequest)">
+ <summary>
+ Get a JsonResult with all the items in the child collection filtered by the 
+ DataSourceRequest.
+ </summary>
+</member>
+<member name="M:Yesod.Mvc.KendoGridRequestManager`2.List(Kendo.Mvc.UI.DataSourceRequest)">
+ <summary>
+ Get a JsonResult with all the line items in the collection, unfiltered by
+ parent ID.
+ </summary>
+</member>
+<member name="M:Yesod.Mvc.KendoGridRequestManager`2.Add(`1,System.Func{`0,Yesod.Mvc.DataSourceChanges{`0}})">
+ <summary>
+ Adds the model to the child collection, saves it to the data source, and returns
+ a JsonResult containing the model updated with any DataSource generated fields.
+ </summary>
+ <param name="successCallback">An optional callback function which will be called after the new model is added to the data source
+ and changes are saved.  Receives the created entity and model state.  Should add a model error to ModelState if the save should 
+ be reversed.  Otherwise the save will stay.  NOTE: Saving the entity before the callback ensures the callback has access to
+ navigation parameters.  If the callback modifies the DataSource, is should return a DataSourceChanges(Of TEntity) describing
+ the changes.</param>
+</member>
+<member name="M:Yesod.Mvc.KendoGridRequestManager`2.Update(`1,System.Func{`0,Yesod.Mvc.DataSourceChanges{`0}})">
+ <summary>
+ Finds the model in the DataSource by its ID and loads any changes.  Saves the changes
+ to the DataSource and returns a JsonResult with the updated model.
+ 
+ If the entity cannot be found, the JsonResult will be empty.
+ </summary>
+ <param name="successCallback">An optional callback function which will be called before changes are loaded to the data source.  Receives
+ the original DB entity.  Should add errors to ModelState if the model should not be saved.  If the callback modifies the DataSource,
+ is should return a DataSourceChanges(Of TEntity) describing the changes.</param>
+</member>
+<member name="M:Yesod.Mvc.KendoGridRequestManager`2.Remove(System.Int32,System.Func{`0,Yesod.Mvc.DataSourceChanges{`0}})">
+ <summary>
+ Finds the entity in the DataSource with the specified ID and removes it.  
+ 
+ Returns a JsonResult with the property Success.  If the entity is successfully
+ found, Success is true, otherwise Success if false.
+ </summary>
+ <param name="successCallback">An optional callback function which will be called before the entity is removed from the data source
+ Receives the entity to be deleted.  Should add errors to ModelState if model should not be deleted.    If the callback modifies
+ the DataSource, is should return a DataSourceChanges(Of TEntity) describing the changes.</param>
+</member>
+<member name="T:Yesod.Mvc.ModelMapper`2">
+ <summary>
+ Handles mapping between objects at two different layers of the application.  Mapping can
+ be performed directly with the Convert method, or as part of a LINQ query.
+ 
+ The mapper provides both an expression tree and a compiled delegate for use with IQueryable or
+ IEnumerable LINQ queries.
+ </summary>
+ <typeparam name="TSource">The type of the original object.</typeparam>
+ <typeparam name="TDestination">The type of object the mapper will create.</typeparam>
+</member>
+<member name="P:Yesod.Mvc.ModelMapper`2.Selector">
+ <summary>
+ An expression tree representing the mapping.  This should be used with IQueryable
+ LINQ methods to allow the IQueryable provider to convert the expression as needed.
+ </summary>
+</member>
+<member name="P:Yesod.Mvc.ModelMapper`2.Lambda">
+ <summary>
+ A delegate representing that performs the mapping.  This should be used with IEnumerable
+ LINQ methods and will be called directly for each object the IEnumerable wants to convert.
+ 
+ NOTE: Do not use the Selector property with IEnumerable or there will be a performance penalty.
+ </summary>
+</member>
+<member name="M:Yesod.Mvc.ModelMapper`2.#ctor(System.Linq.Expressions.Expression{System.Func{`0,`1}})">
+ <summary>
+ Create a new model mapper from the provided expression tree.
+ </summary>
+</member>
+<member name="M:Yesod.Mvc.ModelMapper`2.Convert(`0)">
+ <summary>
+ Immediately converts the source object into a destination object.
+ </summary>
+ <param name="source">The original object to convert.</param>
+ <returns>The converted object.</returns>
+</member>
+<member name="F:Yesod.Mvc.OverloadedMatchType.MatchParameterNames">
+ <summary>
+ Matches parameter names in the method with parameters posted in the HTTP request.  Returns false if
+ there are too many, too few, or the wrong names.
+ </summary>
+</member>
+<member name="F:Yesod.Mvc.OverloadedMatchType.AttemptTypeConversions">
+ <summary>
+ Attempts to convert parameters to the strong type expected by the method.  Returns false if the conversion fails.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Mvc.EmbeddedResourcesManager.#ctor(System.Reflection.Assembly,System.Web.HttpContextBase,Yesod.Tools.IO.IFileSystemService)">
+ <param name="assemblyToManage">Which assemblyToManage contains the resources to be managed.</param>
+ <param name="context">Optionally sepcify the HttpContext to save/search resources for.  Default is HttpContext.Current</param>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Mvc.EmbeddedResourcesManager.GetResourceFilePath(System.String,System.String)">
+ <summary>
+ Returns the application relative virutal path to the resource.  If the resource does
+ not exist in the application, extracts the resource and saves it to the application.
+ </summary>
+ <param name="resourceName">Which resource to extract.</param>
+ <param name="savePath">Application relative virtual path to the resource.</param>
+ <returns>Application relative virtual path to the resource.</returns>
+</member>
+<member name="M:Yesod.Mvc.EmbeddedResourcesManager.GetWebResourceUrl(System.String,System.String)">
+ <summary>
+ Generate a WebResource.axd url for the specified resource.
+ </summary>
+ <param name="resourceName">The fully qualified resource name.  Should include the Assembly name in most cases.</param>
+ <param name="assemblyName">The assembly name.  Default is the assembly which calls this method.</param>
+ <returns>A URL in the format ~/WebResource.axd?...</returns>
+ <remarks></remarks>
+</member>
+<member name="T:Yesod.Reflection.RuntimeOverloadBinder">
+ <summary>
+ This tool was created to solve the problem described here: http://stackoverflow.com/questions/26470484/calling-overloaded-method-with-generic-property-calls-wrong-overload
+ 
+ Chooses which overload of a method to use based on run time types of arguments.
+ </summary>
+</member>
+<member name="T:Yesod.Tools.AccumulatingEmail">
+ <summary>
+ Provides methods to add messages to an e-mail which accumulates based on pre-defined rules.  The
+ message automatically sends when the specified accumulation requirement has been reached.
+ </summary>
+</member>
+<member name="P:Yesod.Tools.AccumulationSettings.MessageText">
+ <summary>
+ Use AccumulationSettings.AccumulatedMessagesMarker to indicate where to insert accumulated messages into
+ the e-mail.
+ </summary>
+</member>
+<member name="T:Yesod.Tools.FlashAuthenticationHelper">
+ <summary>
+ A known bug in Adobe Flash player causes session cookies to only be set for Internet
+ Explorer.  This tool exposes methods to restore session cookies via querystring or form
+ data included in the request.
+ </summary>
+</member>
+<member name="M:Yesod.Tools.FlashAuthenticationHelper.RestoreHttpUser(System.Web.HttpContextBase)">
+ <summary>
+ Searches the Request Form and Querystring of the provided context for a Forms Authentication key and restores
+ the HttpContext.User information.  You should call this method in the AuthorizeCore override of your AuthorizeAttribute
+ </summary>
+</member>
+<member name="M:Yesod.Tools.FlashAuthenticationHelper.IsAuthenticated">
+ <summary>
+ Searches the Request Form and Querystring of the provided context for a session key and checks.  If
+ the associated Forms Authentication session is authenticated.
+ </summary>
+</member>
+<member name="M:Yesod.Tools.FlashAuthenticationHelper.RestoreSessionCookie(System.Web.HttpContextBase)">
+ <summary>
+ Searches the Request Form and Querystring of the provided context and restores their authentication
+ data to the session cookie.
+ 
+ NOTE: This method should be called in the Application_BeginRequest event to ensure cookies are restored
+ before Authentication is processed.  This method does not work with MVC, you must use RestoreHttpUser instead.
+ </summary>
+</member>
+<member name="T:Yesod.Tools.Images.Common">
+ <summary>
+ @author: YY Kosbie
+ @date: 9 May 2011
+ 
+ Common tools to the Yesod.Tools.Images namespace.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Tools.Images.Common.GetExtension(Yesod.Tools.Images.Format)">
+ <summary>
+ Provides a string version of the extension of a Yesod.Tools.Images.Format.
+ </summary>
+ <param name="Format">Yesod.Tools.Images.Format</param>
+ <returns>String representation of the extension.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Tools.Images.Common.IsImage(System.Byte[])">
+ <summary>
+ Check if this file is any of the known file types
+ </summary>
+ <param name="FileBytes">FileBytes is a member of the FileUpload control and provides the underlying data in the uploaded file.</param>
+ <returns>True if the magic number indicates this is an image, otherwise false.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Tools.Images.Common.IsJPG(System.Byte[])">
+ <summary>
+ Is this a JPG?
+ </summary>
+ <param name="FileBytes">FileBytes is a member of the FileUpload control and provides the underlying data in the uploaded file.</param>
+ <returns>True if the magic number indicates this is an image, otherwise false.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Tools.Images.Common.IsGIF(System.Byte[])">
+ <summary>
+ Is this a gif?
+ </summary>
+ <param name="FileBytes">FileBytes is a member of the FileUpload control and provides the underlying data in the uploaded file.</param>
+ <returns>True if the magic number indicates this is an image, otherwise false.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Tools.Images.Common.IsPNG(System.Byte[])">
+ <summary>
+ Is this a PNG?
+ </summary>
+ <param name="FileBytes">FileBytes is a member of the FileUpload control and provides the underlying data in the uploaded file.</param>
+ <returns>True if the magic number indicates this is an image, otherwise false.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Tools.Images.Common.IsBMP(System.Byte[])">
+ <summary>
+ Is this a BMP?
+ </summary>
+ <param name="FileBytes">FileBytes is a member of the FileUpload control and provides the underlying data in the uploaded file.</param>
+ <returns>True if the magic number indicates this is an image, otherwise false.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Tools.Images.Common.IsTIFF(System.Byte[])">
+ <summary>
+ Is this a TIFF?
+ </summary>
+ <param name="FileBytes">FileBytes is a member of the FileUpload control and provides the underlying data in the uploaded file.</param>
+ <returns>True if the magic number indicates this is an image, otherwise false.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Tools.Images.Common.IsWMP(System.Byte[])">
+ <summary>
+ Is this a WMP?
+ </summary>
+ <param name="FileBytes">FileBytes is a member of the FileUpload control and provides the underlying data in the uploaded file.</param>
+ <returns>True if the magic number indicates this is an image, otherwise false.</returns>
+ <remarks></remarks>
+</member>
+<member name="T:Yesod.Tools.Images.Format">
+ <summary>
+ @author: YY Kosbie
+ @date: 9 May 2011
+ 
+ Enum with all formats tools in the Yesod.Tools.Images namespace support.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:Yesod.Tools.Images.Thumbnailer">
+ <summary>
+ @author: YY Kosbie
+ @date: 7 May 2011
+ 
+ Create thumbnails using Windows Imaging Component (as reccomended per MS: http://msdn.microsoft.com/en-us/library/system.drawing.aspx)
+ </summary>
+ <remarks>
+ Shared methods must reprocess the entire file with every call.  If you are going to make multiple edits/versions of
+ one image, use the instance methods instead.
+ </remarks>
+</member>
+<member name="M:Yesod.Tools.Images.Thumbnailer.#ctor(System.String)">
+ <summary>
+ Constructor that reads the file data to binary from a UNC.
+ </summary>
+ <param name="PictureUNC">UNC Path to the picture to load.</param>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Tools.Images.Thumbnailer.#ctor(System.Byte[])">
+ <summary>
+ Main Constructor.
+ </summary>
+ <param name="PictureData">Binary data of the picture to resize.</param>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Tools.Images.Thumbnailer.CreateThumbnailAtLocation(System.UInt32,System.UInt32,System.String,Yesod.Tools.Images.Format)">
+ <summary>
+ Creates a thumbnail and saves it to the specified location.
+ </summary>
+ <param name="Height">Max height.  Enter 0 to auto-calculate based on the max width.</param>
+ <param name="Width">Max width.  Enter 0 to auto-caulcualte based on the height.</param>
+ <param name="Location">UNC path to save to.  WARNING: Will overwrite file if it already exits.</param>
+ <param name="Format">Image format to save in thumbnail as.</param>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Tools.Images.Thumbnailer.CreateThumbnailAtRandomLocation(System.UInt32,System.UInt32,System.String,Yesod.Tools.Images.Format)">
+ <summary>
+ Creates a thumbnail and saves it to a random file in the specified path.
+ </summary>
+ <param name="Height">Max height.  Enter 0 to auto-calculate based on the max width.</param>
+ <param name="Width">Max width.  Enter 0 to auto-caulcualte based on the height.</param>
+ <param name="Path">UNC directory to save in.</param>
+ <param name="Format">Image format to save thumbnail as.</param>
+ <returns>File name of the thumbnail (path can be built using provided Path).</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Tools.Images.Thumbnailer.CreateThumbnail(System.UInt32,System.UInt32,Yesod.Tools.Images.Format)">
+ <summary>
+ Creates a thumbnail with the specified dimensions.
+ </summary>
+ <param name="Height">Max height.  Enter 0 to auto-calculate based on the max width.</param>
+ <param name="Width">Max width.  Enter 0 to auto-caulcualte based on the height.</param>
+ <param name="Format">Image format to save in thumbnail as.</param>
+ <returns>Binary data of the new image</returns>
+ <remarks></remarks>
+</member>
+<member name="T:Yesod.Tools.IO.Common">
+ <summary>
+ Common tools in the Yesod.Tools.IO namespace
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Tools.IO.Common.SafeGetRandomFileName(System.String,System.String)">
+ <summary>
+ Provides an atomic implementation of System.IO.Path.GetRandomFileName by
+ creating a file at name check time.
+ 
+ NOTE: This implementation will always create a file, even if you never add
+ data to it.  You are responsible for destroying the file if you do not need
+ it.
+ </summary>
+ <param name="Path">The directory to create the random file in.</param>
+ <param name="Extension">The extension to use on the file (e.g. .jpg)</param>
+ <returns>Name of the file created.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Tools.IO.Common.UnMapPath(System.String,System.Boolean)">
+ <summary>
+ Reverses the Server.MapPath function by providing an application specific
+ version of the specified system path.
+ </summary>
+ <param name="PhysicalPath">The server version of the path</param>
+ <param name="CheckForVirtualPaths">IIS supports using symbolic folder links called "Virutal Directories".  These links
+ can cause application content to be physically located outside of the application's physical root.  Searching
+ these directories is a much more time consuming process so only call this if you need to.
+ NOTE: This method may eventually provide caching of the virtual path table to speed up subsequent calls.</param>
+ <returns>The application version of the path.</returns>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Tools.String.Pretty.AddSpacingByCase(System.String)">
+ <summary>
+ Add logical spacing based on the casing of the input string.
+ </summary>
+ <param name="Input"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:Yesod.Widgets.Fluent.ExternalFilterBuilder.JqInput(System.String)">
+ <summary>
+ A javascript expression which evaluates to a jQuery object containing the filter input.
+ </summary>
+</member>
+<member name="M:Yesod.Widgets.Fluent.ExternalFilterBuilder.JqContainer(System.String)">
+ <summary>
+ A javascript expression which evaluates to a jQuery object container the container of the filter.
+ If this is not set, the JqInput will be used as the filter.
+ 
+ NOTE: This object will be removed from the DOM and put into the widget/manager it is
+ intended to be used with.
+ </summary>
+</member>
+<member name="M:Yesod.Widgets.Fluent.DirectionChangeWidgetBuilder.FooterFormatString(System.String)">
+ <summary>
+ The format string used to construct the text in the footer of the widget.  There are two
+ format arguments, {0} is the word "Up" or "Down" depending on the direction of change and
+ {1} is the formatted amount the widget changed.
+ 
+ DEFAULT: "{0} by {1} from the same time period last year."
+ </summary>
+</member>
+<member name="M:Yesod.Widgets.Fluent.FilterBuilderBase`3.NonFiltering(System.Boolean)">
+ <summary>
+ Indicates that the filter should not be used to filter widgets on the page.  Intended
+ to be used as a cascade step along with other filters.
+ </summary>
+</member>
+<member name="F:Yesod.Widgets.UiComponentBase._Id">
+ <summary>
+ The unique HTML ID of this component.  If you  do not set an ID, one will be
+ generated in the format s_HtmlComponent_#.
+ </summary>
+</member>
+</members>
+</doc>

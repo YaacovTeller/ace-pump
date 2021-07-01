@@ -1,0 +1,23 @@
+<ion-view title="" hide-back-button="true" style="background-color:#5A4E42;">
+    <ion-nav-buttons side="left" class="has-header">
+        <div class="item-input-inset">
+            <label class="item-input-wrapper textbox-search search-box">
+                <i class="icon ion-ios-search placeholder-icon"></i>
+                <input type="search" placeholder="Search by ID" ng-model="searchCtrl.searchID">
+            </label>
+        </div>
+        <button ng-click="searchCtrl.runSearch()" class="button button-stable button-outline">Go</button>
+    </ion-nav-buttons>
+  <ion-nav-buttons side="right" class="has-header">
+    <button class="button button-clear button-positive" ui-sref="top.logout">Logout</button>
+  </ion-nav-buttons>
+  <ion-content padding="true" class="has-header">
+      <ion-list>
+          <ion-item ui-sref="top.details({deliveryTicketId : ticket.DeliveryTicketID})" ng-repeat="ticket in searchCtrl.tickets">
+              <h2>{{ticket.DeliveryTicketID}} - {{ticket.CustomerName}}</h2>
+              <p>{{ticket.WellNumber}} {{ticket.LeaseName}} {{ticket.TicketDate | date:'shortDate' }}</p>
+          </ion-item>
+      </ion-list>
+      <h2 ng-show="!searchCtrl.tickets.length" style="color:white;text-align:center;">No tickets found.</h2>
+  </ion-content>
+</ion-view>

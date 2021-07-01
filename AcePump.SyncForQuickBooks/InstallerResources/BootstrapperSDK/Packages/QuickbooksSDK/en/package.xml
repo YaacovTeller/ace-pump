@@ -1,0 +1,13 @@
+<Package 
+  xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper"
+  Name="DisplayName"
+  Culture="Culture">
+
+  <!-- Defines a localizable string table for error messages. -->
+  <Strings>
+    <String Name="DisplayName">QBFC13_0Installer</String>
+    <String Name="Culture">en</String>
+    <String Name="AU_Unaccepted">The automatic update agreement is not accepted.</String>
+    <String Name="GeneralFailure">A failure occurred attempting to launch the setup.</String>
+  </Strings>
+</Package>

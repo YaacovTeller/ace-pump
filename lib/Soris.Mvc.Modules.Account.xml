@@ -1,0 +1,32 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Soris.Mvc.Modules.Account
+</name>
+</assembly>
+<members>
+<member name="T:Soris.Mvc.Modules.Account.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Soris.Mvc.Modules.Account.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Soris.Mvc.Modules.Account.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:Soris.Mvc.Modules.Account.Configuration.Fluent.AccountControllerConfigurator.Profile``1(System.Action{Soris.Mvc.Modules.Account.Configuration.Fluent.AccountProfileConfigurator{``0}})">
+ <summary>
+ Configure the profile class which stores information about a specific user not directly related
+ to their account configuration.
+ </summary>
+</member>
+</members>
+</doc>

@@ -1,0 +1,6 @@
+﻿/*
+ * Soris Software LLC (C) 2018
+ *
+ * All code in the Soris UI Components library was developed by and is the exclusive property of Soris Software LLC.
+ * Soris Software LLC hereby grants a permanent, global license to the components included in this project.
+ */

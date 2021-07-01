@@ -1,0 +1,77 @@
+﻿<div class="container" srs-loading="mwCtrl.loading">
+    <div class="row">
+        <div class="col-md-6" ng-show="!mwCtrl.source">
+            <h3>Select Source</h3>
+
+            <input kendo-combo-box
+                   id="LeaseID"
+                   k-placeholder="'Lease'"
+                   k-filter="'contains'"
+                   k-min-length="2"
+                   k-auto-bind="false"
+                   k-data-text-field="'LeaseName'"
+                   k-data-value-field="'LeaseID'"
+                   k-data-source="mwCtrl.lists.leases" />
+
+            <input kendo-combo-box
+                   id="WellID"
+                   k-placeholder="'Well'"
+                   k-filter="'contains'"
+                   k-min-length="2"
+                   k-auto-bind="false"
+                   k-data-text-field="'WellNumber'"
+                   k-data-value-field="'WellID'"
+                   k-data-source="mwCtrl.lists.wells"
+                   k-cascade-from="'LeaseID'"
+                   k-cascade-from-field="'LeaseID'"
+                   k-ng-model="mwCtrl.sourceWell" />
+
+            <button class="btn btn-default" ng-click="mwCtrl.selectSourceWell()" ng-disabled="!mwCtrl.sourceWell">Select</button>
+        </div>
+
+        <div class="col-md-6" ng-show="mwCtrl.source">
+            <h3>Source - {{ mwCtrl.source.LeaseName }}, {{ mwCtrl.source.WellNumber }}</h3>
+            <button class="btn btn-link" ng-click="mwCtrl.source=null">Edit</button>
+
+            <div ng-show="mwCtrl.source.InstalledPumpID" class="alert" ng-class="{'alert-danger': mwCtrl.source.InstalledPumpID && mwCtrl.target.InstalledPumpID && mwCtrl.source.installedPumpMergeOption == 'OverwriteTarget' && mwCtrl.target.installedPumpMergeOption == 'OverwriteTarget' }">
+                <div>
+                    <a ng-href="Pump/Details/{{mwCtrl.source.InstalledPumpID}}" target="_blank">Pump #{{ mwCtrl.source.InstalledPumpNumber }}</a> is currently installed in this well.
+                </div>
+                <div>
+                    <input type="radio" ng-model="mwCtrl.source.installedPumpMergeOption" value="SetNull" /> Remove From All Wells
+                    <input type="radio" ng-model="mwCtrl.source.installedPumpMergeOption" value="OverwriteTarget" /> Move To Target Well
+                </div>
+            </div>
+
+            <ul>
+                <li ng-repeat="dtNum in mwCtrl.source.Tickets">
+                    <a ng-href="DeliveryTicket/Details/{{dtNum}}" target="_blank">Ticket #{{ dtNum }}</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <h3>Target - {{ mwCtrl.target.LeaseName }}, {{ mwCtrl.target.WellNumber }}</h3>
+
+            <div ng-show="mwCtrl.target.InstalledPumpID" class="alert" ng-class="{'alert-danger': mwCtrl.source.InstalledPumpID && mwCtrl.target.InstalledPumpID && mwCtrl.source.installedPumpMergeOption == 'OverwriteTarget' && mwCtrl.target.installedPumpMergeOption == 'OverwriteTarget' }">
+                <div>
+                    <a ng-href="Pump/Details/{{mwCtrl.target.InstalledPumpID}}" target="_blank">Pump #{{ mwCtrl.target.InstalledPumpNumber }}</a> is currently installed in this well.
+                </div>
+                <div>
+                    <input type="radio" ng-model="mwCtrl.target.installedPumpMergeOption" value="SetNull" /> Remove From All Wells
+                    <input type="radio" ng-model="mwCtrl.target.installedPumpMergeOption" value="OverwriteTarget" /> Keep In Target Well
+                </div>
+            </div>
+
+            <ul>
+                <li ng-repeat="dtNum in mwCtrl.target.Tickets">
+                    <a ng-href="DeliveryTicket/Details/{{dtNum}}" target="_blank">Ticket #{{ dtNum }}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <button class="btn btn-primary" ng-disabled="!mwCtrl.source || (mwCtrl.source.InstalledPumpID && mwCtrl.target.InstalledPumpID && mwCtrl.source.installedPumpMergeOption == 'OverwriteTarget' && mwCtrl.target.installedPumpMergeOption == 'OverwriteTarget')" ng-click="mwCtrl.mergeAndClose()">Merge</button>
+    </div>
+</div>

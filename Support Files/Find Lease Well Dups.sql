@@ -1,0 +1,2 @@
+select wellnumber, KFLeaseID from tblWellLocation where wellnumber is not null group by wellnumber, KFLeaseID having count(*)>1
+select locationname from tblLeaseLocations where locationname is not null group by LocationName having count(*) >1

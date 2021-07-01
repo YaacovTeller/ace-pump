@@ -1,0 +1,1 @@
+C:\ace-pump-master\AcePump.SyncForQuickBooks\obj\x86\Debug\AcePump.SyncForQuickBooks.vbprojAssemblyReference.cache

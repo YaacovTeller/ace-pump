@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget android-versionCode="10023" defaultlocale="en-US" id="com.acepumpinc.ptp" version="1.0.8" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:tools="http://schemas.android.com/tools" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps">
+  <name>Ace Pump PTP Mobile</name>
+  <description>Provides direct smart phone integration for the Ace Pump PTP system.</description>
+  <author email="dev@cordova.apache.org" href="http://cordova.io">Soris Software LLC</author>
+  <vs:template-name>BlankJS</vs:template-name>
+  <content src="index.compiled.html" />
+  <access origin="*" />
+  <preference name="SplashScreen" value="screen" />
+  <preference name="windows-target-version" value="10.0" />
+  <preference name="KeyboardDisplayRequiresUserAction" value="false" />
+  <allow-intent href="http://*/*" />
+  <allow-intent href="https://*/*" />
+  <allow-intent href="tel:*" />
+  <allow-intent href="sms:*" />
+  <allow-intent href="mailto:*" />
+  <allow-intent href="geo:*" />
+  <platform name="android">
+    <allow-intent href="market:*" />
+  </platform>
+  <platform name="ios">
+    <hook src="hooks/xcode8.js" type="before_compile" />
+    <allow-intent href="itms:*" />
+    <allow-intent href="itms-apps:*" />
+  </platform>
+  <platform name="android">
+    <icon density="ldpi" src="res/icons/android/icon-36-ldpi.png" />
+    <icon density="mdpi" src="res/icons/android/icon-48-mdpi.png" />
+    <icon density="hdpi" src="res/icons/android/icon-72-hdpi.png" />
+    <icon density="xhdpi" src="res/icons/android/icon-96-xhdpi.png" />
+  </platform>
+  <platform name="ios">
+    <icon height="1024" src="res/icons/ios/icon-AppStore-1024.png" width="1024" />
+    <icon height="180" src="res/icons/ios/icon-60-3x.png" width="180" />
+    <icon height="60" src="res/icons/ios/icon-60.png" width="60" />
+    <icon height="120" src="res/icons/ios/icon-60-2x.png" width="120" />
+    <icon height="76" src="res/icons/ios/icon-76.png" width="76" />
+    <icon height="152" src="res/icons/ios/icon-76-2x.png" width="152" />
+    <icon height="40" src="res/icons/ios/icon-40.png" width="40" />
+    <icon height="80" src="res/icons/ios/icon-40-2x.png" width="80" />
+    <icon height="57" src="res/icons/ios/icon-57.png" width="57" />
+    <icon height="114" src="res/icons/ios/icon-57-2x.png" width="114" />
+    <icon height="72" src="res/icons/ios/icon-72.png" width="72" />
+    <icon height="144" src="res/icons/ios/icon-72-2x.png" width="144" />
+    <icon height="29" src="res/icons/ios/icon-small.png" width="29" />
+    <icon height="58" src="res/icons/ios/icon-small-2x.png" width="58" />
+    <icon height="87" src="res/icons/ios/icon-small-3x.png" width="87" />
+    <icon height="50" src="res/icons/ios/icon-50.png" width="50" />
+    <icon height="100" src="res/icons/ios/icon-50-2x.png" width="100" />
+    <icon height="167" src="res/icons/ios/icon-83.5-2x.png" width="167" />
+  </platform>
+  <platform name="windows" />
+  <platform name="android">
+    <splash density="land-hdpi" src="res/screens/android/screen-hdpi-landscape.png" />
+    <splash density="land-ldpi" src="res/screens/android/screen-ldpi-landscape.png" />
+    <splash density="land-mdpi" src="res/screens/android/screen-mdpi-landscape.png" />
+    <splash density="land-xhdpi" src="res/screens/android/screen-xhdpi-landscape.png" />
+    <splash density="port-hdpi" src="res/screens/android/screen-hdpi-portrait.png" />
+    <splash density="port-ldpi" src="res/screens/android/screen-ldpi-portrait.png" />
+    <splash density="port-mdpi" src="res/screens/android/screen-mdpi-portrait.png" />
+    <splash density="port-xhdpi" src="res/screens/android/screen-xhdpi-portrait.png" />
+  </platform>
+  <platform name="ios">
+    <splash height="480" src="res/screens/ios/screen-iphone-portrait.png" width="320" />
+    <splash height="960" src="res/screens/ios/screen-iphone-portrait-2x.png" width="640" />
+    <splash height="1024" src="res/screens/ios/screen-ipad-portrait.png" width="768" />
+    <splash height="2048" src="res/screens/ios/screen-ipad-portrait-2x.png" width="1536" />
+    <splash height="768" src="res/screens/ios/screen-ipad-landscape.png" width="1024" />
+    <splash height="1536" src="res/screens/ios/screen-ipad-landscape-2x.png" width="2048" />
+    <splash height="1136" src="res/screens/ios/screen-iphone-568h-2x.png" width="640" />
+    <splash height="1334" src="res/screens/ios/screen-iphone-portrait-667h.png" width="750" />
+    <splash height="2208" src="res/screens/ios/screen-iphone-portrait-736h.png" width="1242" />
+    <splash height="1242" src="res/screens/ios/screen-iphone-landscape-736h.png" width="2208" />
+  </platform>
+  <platform name="windows">
+    <splash height="300" src="res/screens/windows/SplashScreen.scale-100.png" width="620" />
+    <splash height="1920" src="res/screens/windows/SplashScreen.scale-240.png" width="1152" />
+    <splash height="1920" src="res/screens/windows/SplashScreenPhone.scale-240.png" width="1152" />
+  </platform>
+  <preference name="BackupWebStorage" value="none" />
+  <vs:toolsetVersion>7.1.0</vs:toolsetVersion>
+    <engine name="android" spec="^6.3.0" />
+  <engine name="ios" spec="4.3.0" />
+  <engine name="windows" spec="^6.0.1" />
+  <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
+  <plugin name="cordova-plugin-nativestorage" spec="^2.3.2" />
+  <plugin name="cordova-plugin-camera" spec="^4.0.3">
+    <variable name="CAMERA_USAGE_DESCRIPTION" value="The camera is used to take pictures of parts to upload to the repair system." />
+    <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="The photo library is used to store and access photos of parts to upload to the repair system." />
+  </plugin>
+  <plugin name="cordova-plugin-file" spec="^6.0.1" />
+  <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
+  <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+</widget>

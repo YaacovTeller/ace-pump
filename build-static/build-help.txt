@@ -1,0 +1,20 @@
+ACE PUMP BUILD SYSTEM
+=====================
+Usage
+grunt build [options]
+
+Options
+	--app= mvc | webapi	DEFAULT: mvc.  Which Ace Pump app to build to the build dir.
+
+	--clean				Delete the entire contents of the ./build directory before running the build.
+						Set automatically when you build a different ap than last build.
+
+	--options			Display this help text.
+
+	--publish=app/conf	Equivalent to --app=app --clean --rebuild=conf
+
+	--rebuild=config	Recompiles the .NET AcePump.WebApi project (and all dependencies) using the
+						specified build-mode.  (Mode must be defined in relevant AcePump.*.csproj files)
+
+	--run				Run the specified server from the build using IIS Express.  IIS Express output
+						is attached to the local console after build completes.

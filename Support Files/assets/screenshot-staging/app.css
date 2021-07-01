@@ -1,0 +1,39 @@
+﻿.inlay{
+    background-color: white;
+}
+
+.inlay-text {
+    color: #000000;
+    text-align: center;
+}
+
+/* PRELOAD */
+.preload-wait-view.loaded {
+    display: none;
+}
+
+.preload-wait-view {
+    background-color: #f9efed;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.preload-content-logo {
+    margin-top: 100px;
+    height: 80%;
+
+    background-image: url(/img/AcePumpLogoSm.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    opacity: 1;
+
+    animation: blink 3s linear infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,197 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+AcePump.Domain
+</name>
+</assembly>
+<members>
+<member name="T:AcePump.Domain.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:AcePump.Domain.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:AcePump.Domain.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:AcePump.Domain.BL.Runtimes.FluentRuntimeManager.SetStartDate(System.DateTime,System.Int32)">
+ <summary>
+ Sets the IRuntime start date to startDate. Automatically splits the runtime into two
+ separate runtimes if it was previously set with a different start date from a different
+ event.
+ </summary>
+ <param name="startDate">The new start date to set on the runtime.</param>
+</member>
+<member name="M:AcePump.Domain.BL.Runtimes.FluentRuntimeManager.SetEndDate(System.DateTime,System.Int32)">
+ <summary>
+ Sets the IRuntime finish date to finishDate. Automatically splits the runtime
+ into two separate runtimes if it was previously set with a different finish date
+ from a different event.
+ </summary>
+</member>
+<member name="M:AcePump.Domain.BL.Runtimes.FluentRuntimeManager.RemoveEndDate">
+ <summary>
+ Clears any finish date set on the IRuntime.  Automatically joins this runtime with
+ the next runtime if there is no start date on the next runtime.
+ </summary>
+</member>
+<member name="M:AcePump.Domain.BL.Runtimes.FluentRuntimeManager.RemoveStartDate">
+ <summary>
+ Clears any start date set on the IRuntime.  Automatically joins this runtime with
+ the previous runtime if there is no end date on the previous runtime.
+ </summary>
+</member>
+<member name="M:AcePump.Domain.BL.Runtimes.FluentRuntimeManager.CalculateRuntimeLength">
+ <summary>
+ Calculates the number of days that passed in this runtime.  Does not throw if there is
+ no start date or end date.
+ </summary>
+</member>
+<member name="M:AcePump.Domain.BL.Runtimes.IRuntimeManager.CreateIfNotExists">
+ <summary>
+ Creates the runtime if it does not already exist and stores it in the DataSource.
+ Does not SaveChanges to the DataSource.
+ </summary>
+</member>
+<member name="M:AcePump.Domain.BL.Runtimes.IRuntimeManager.Exists">
+ <summary>
+ Determines if a matching runitme exists in the DataSource.
+ </summary>
+</member>
+<member name="M:AcePump.Domain.BL.Runtimes.IRuntimeManager.SetStartDate(System.DateTime,System.Int32)">
+ <summary>
+ Sets the IRuntime start date to startDate. Automatically splits the runtime into two
+ separate runtimes if it was previously set with a different start date from a different
+ event.
+ </summary>
+ <param name="startDate">The new start date to set on the runtime.</param>
+</member>
+<member name="M:AcePump.Domain.BL.Runtimes.IRuntimeManager.SetEndDate(System.DateTime,System.Int32)">
+ <summary>
+ Sets the IRuntime finish date to finishDate. Automatically splits the runtime
+ into two separate runtimes if it was previously set with a different finish date
+ from a different event.
+ </summary>
+</member>
+<member name="M:AcePump.Domain.BL.Runtimes.IRuntimeManager.RemoveEndDate">
+ <summary>
+ Clears any finish date set on the IRuntime.  Automatically joins this runtime with
+ the next runtime if there is no start date on the next runtime.
+ </summary>
+</member>
+<member name="M:AcePump.Domain.BL.Runtimes.IRuntimeManager.RemoveStartDate">
+ <summary>
+ Clears any start date set on the IRuntime.  Automatically joins this runtime with
+ the previous runtime if there is no end date on the previous runtime.
+ </summary>
+</member>
+<member name="M:AcePump.Domain.BL.Runtimes.IRuntimeManager.CalculateRuntimeLength">
+ <summary>
+ Calculates the number of days that passed in this runtime.  Does not throw if there is
+ no start date or end date.
+ </summary>
+</member>
+<member name="M:AcePump.Domain.BL.Runtimes.RuntimeQueryHelper.GetPartRuntimes(System.Int32,System.DateTime)">
+ <summary>
+ Gets all the runtimes for the specified pump ID which intersect with the event date.
+ </summary>
+</member>
+<member name="M:AcePump.Domain.BL.Runtimes.RuntimeQueryHelper.ManageRuntimeEventOccuredIn(System.Int32,System.DateTime)">
+ <summary>
+ Checks if the eventDate occured during an existing pump runtime for the pumpId.  If 
+ it does, returns that runtime.  Otherwise creates a new runtime for the pumpId.
+ </summary>
+ <returns>An IRuntimeManager exposing methods to modify the runtime that was found.</returns>
+</member>
+<member name="M:AcePump.Domain.BL.Runtimes.RuntimeQueryHelper.ManageRuntimeEventOccuredIn(System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Checks if the eventDate occured during an existing part runtime for the pumpId and
+ templatePartDefId combination.  If it does, returns that runtime.  Otherwise creates a new runtime for
+ the pumpId partId.
+ </summary>
+ <returns>An IRuntimeManager exposing methods to modify the runtime that was found.</returns>
+</member>
+<member name="M:AcePump.Domain.BL.Runtimes.RuntimeQueryHelper.FindRuntimeEventOccuredIn(System.Int32,System.Int32,System.DateTime)">
+ <summary>
+ Checks if the eventDate occured during an existing part runtime for the pumpId and
+ templatePartDefId combination.  Does NOT create the runtime if it does not exist.
+ </summary>
+</member>
+<member name="M:AcePump.Domain.BL.Runtimes.RuntimeQueryHelper.FindRuntimeEventOccuredIn(System.Int32,System.DateTime)">
+ <summary>
+ Checks if the eventDate occured during an existing pump runtime for the pumpId.
+ Does NOT create the runtime if it is not found.
+ </summary>
+</member>
+<member name="M:AcePump.Domain.BL.Runtimes.RuntimeManagerBase`1.CreateNewRuntimeBasedOn(`0)">
+ <summary>
+ Create a new runtime of TRuntime type which identifies the same item as the basedOn
+ runtime but does not specify and start or finish information.
+ </summary>
+</member>
+<member name="P:AcePump.Domain.Models.PartRuntime.RuntimeStartedByTicket">
+ <summary>
+ The delivery ticket which was issued when this runtime started.
+ </summary>
+</member>
+<member name="P:AcePump.Domain.Models.PartRuntime.RuntimeEndedByInspection">
+ <summary>
+ The part inspection where the part was found broken.  Ended the rutnime.
+ </summary>
+</member>
+<member name="P:AcePump.Domain.Models.PartRuntimeSegment.SegmentStartedByTicket">
+ <summary>
+ The delivery ticket which was issued when this segment started.
+ </summary>
+</member>
+<member name="P:AcePump.Domain.Models.PartRuntimeSegment.SegmentEndedByTicket">
+ <summary>
+ The delivery ticket which was issued when this segment ended.
+ </summary>
+</member>
+<member name="P:AcePump.Domain.Models.PumpRuntime.RuntimeStartedByTicket">
+ <summary>
+ The delivery ticket which was issued when this runtime started.
+ </summary>
+</member>
+<member name="P:AcePump.Domain.Models.PumpRuntime.RuntimeEndedByTicket">
+ <summary>
+ The delivery ticket which was issued when this runtime ended.
+ </summary>
+</member>
+<member name="P:AcePump.Domain.Models.LineItem.UnitPriceAfterDiscount">
+ <summary>
+ The per unit price after discount is applied for this line.
+ </summary>
+</member>
+<member name="P:AcePump.Domain.Models.LineItem.SalesTaxAmount">
+ <summary>
+ The amount charged in sales tax for the line.
+ </summary>
+</member>
+<member name="P:AcePump.Domain.Models.LineItem.LineTotal">
+ <summary>
+ The total cost of the line after discount.  EXCLUDES tax.
+ </summary>
+</member>
+<member name="P:AcePump.Domain.Models.PartTemplate.ResalePrice">
+ <summary>
+ The price after discount Ace Pump will actually sell the part for.  This is calculated based
+ on the cost and markup.
+ </summary>
+</member>
+<member name="P:AcePump.Domain.Models.PartTemplate.ListPrice">
+ <summary>
+ The price Ace Pump lists as the "official" price.  This is calculated based on the resale and discount.
+ </summary>
+</member>
+</members>
+</doc>

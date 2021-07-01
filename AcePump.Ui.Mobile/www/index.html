@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Security-Policy" content="
+              default-src data: gap: file: https://ssl.gstatic.com (((ENVIRONMENT.csp.defaultSrc)));
+              style-src 'self' 'unsafe-inline';
+              media-src 'none';
+              script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com/">
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+    <title>Ace Pump - Mobile</title>
+
+    <script type="text/javascript">
+        window.environment = (((ENVIRONMENT)));
+    </script>
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic/js/ionic.native.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.2.13/ng-file-upload.min.js"></script>
+    <script src="lib/ngcordova-wrapper-nativestorage/dist/ngcordova-wrapper-nativestorage.min.js"></script>
+    <script src='lib/signature_pad/dist/signature_pad.min.js'></script>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet" type="text/css">
+
+    <style type="text/css">
+        .platform-ios .manual-ios-statusbar-padding {
+            padding-top: 20px;
+        }
+
+        .manual-remove-top-padding {
+            padding-top: 0px;
+        }
+
+            .manual-remove-top-padding .scroll {
+                padding-top: 0px !important;
+            }
+
+        ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+
+            ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+                border-radius: 0px;
+                border-left: 0px;
+                border-right: 0px;
+            }
+
+        .show-list-numbers-and-dots ul {
+            list-style-type: disc;
+            padding-left: 40px;
+        }
+
+        .show-list-numbers-and-dots ol {
+            list-style-type: decimal;
+            padding-left: 40px;
+        }
+    </style>
+
+    <script src="lib/AcePump.mobileUi.all.min.js"></script>
+</head>
+<body ng-app="app" animation="slide-left-right-ios7">
+    <div class="ng-hide" ng-show="preloadComplete">
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button>
+            </ion-nav-back-button>
+        </ion-nav-bar>
+
+        <ion-nav-view>
+        </ion-nav-view>
+    </div>
+
+    <div ng-class="{ 'loaded': preloadComplete }" class="preload-wait-view">
+        <div class="preload-content-logo"></div>
+        (((ENVIRONMENT.applicationSubtitle)))
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+</body>
+</html>

@@ -1,0 +1,428 @@
+﻿.ticket-section-columns-edit
+{
+    float: left;
+    border-right: 1px solid;
+    padding-right: 10px;
+    margin-right: 5px;
+    min-height: 160px;
+}
+
+        .ticket-section-columns-edit .editor-label
+        {
+            display: block;
+            width: 86px;
+            white-space: nowrap;
+            margin: 0.8em 0 0 0;        
+        } 
+
+        .ticket-section-columns-edit  .editor-field input:not([type="checkbox"])
+        {
+            display: inline;
+            width: 108px;
+            height: 1.65em;
+        }
+
+.ticket-section-column1-edit 
+{
+    float: left;
+    padding: 0px 12px 3px 6px;        
+}
+
+.ticket-section-column2-edit 
+{
+    float: left;
+    padding: 0px 6px 3px 6px;        
+}
+
+.ticket-section-pump-history-edit
+{
+    float: left;
+    border-right: 1px solid;
+    padding-right: 10px;
+    margin-right: 5px;
+    min-height: 160px;
+}
+
+.ticket-history-type-title-edit
+{
+    font-size: 1.3em;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+}
+
+        .ticket-section-pump-history-edit .editor-label 
+        {
+            display: block;
+            width: 86px;
+            white-space: nowrap;
+            margin: 0.8em 0 0 0;        
+        }
+
+        .ticket-section-pump-history-edit .editor-field input:not([type="checkbox"])
+        {
+            display: inline;
+            width: 108px;
+            height: 1.65em;
+        }
+
+.ticket-history-pump-info-edit
+{
+    float: left;
+    padding: 0px 12px 3px 6px;        
+}
+
+.ticket-history-date-edit 
+{
+    float: left;
+    padding: 0px 6px 3px 6px;        
+}
+
+.ticket-history-additional-data-edit
+{
+    float: right;    
+    padding-right:6px;
+}
+
+
+.ticket-section-additional-data-edit
+{
+    float: left;
+    border-right: 1px solid;
+    padding-right: 10px;
+    margin-right: 5px;
+    min-height: 160px;
+}
+
+        .ticket-section-additional-data-edit .editor-label 
+        {
+            display: inline-block;
+            width: 108px;
+            white-space: nowrap;
+            margin: 0.8em 1em 0 0;     
+            text-align:right;   
+        }
+
+        .ticket-section-additional-data-edit .editor-field input:not([type="checkbox"])
+        {
+            display: inline;
+            width: 108px;
+            height: 1.65em;
+        }
+
+.ticket-additional-data-row-edit 
+{
+    float: left;
+    padding: 0px 12px 3px 6px;        
+}
+
+.ticket-section-columns-details
+{
+    float: left;
+    border-right: 1px solid;
+    padding-right: 10px;
+    margin-right: 5px;
+    min-height: 160px;
+}
+
+        .ticket-section-columns-details .display-label
+        {
+            display: block;
+            width: 86px;
+            white-space: nowrap;
+            margin: 0.8em 0 0 0;
+            font-weight: bold;
+        }
+
+
+        .ticket-section-columns-details .display-field
+         {
+                display: block;
+                white-space: nowrap;        
+                height: 1.65em;        
+        }
+
+.ticket-section-column1-details 
+{
+    float: left;
+    padding: 0px 12px 3px 6px;        
+}
+
+.ticket-section-column2-details 
+{
+    float: left;
+    padding: 0px 6px 3px 6px;        
+}
+
+.ticket-section-pump-history-details
+{
+    float: left;
+    border-right: 1px solid;
+    padding-right: 10px;
+    margin-right: 5px;
+    min-height: 160px;
+}
+
+        .ticket-section-pump-history-details .display-label
+        {
+            display: block;
+            width: 86px;
+            white-space: nowrap;
+            margin: 0.8em 0 0 0;
+            font-weight: bold;
+        }
+
+
+        .ticket-section-pump-history-details .display-field
+         {
+                display: block;
+                white-space: nowrap;        
+                height: 1.65em;        
+         }
+
+
+.ticket-history-type-title-details
+{
+    font-size: 1.3em;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+}
+
+
+.ticket-history-pump-info-details
+{
+    float: left;
+    padding: 0px 12px 3px 6px;        
+}
+
+.ticket-history-date-details 
+{
+    float: left;
+    padding: 0px 6px 3px 6px;        
+}
+
+.ticket-history-additional-data-details
+{
+    float: right;    
+    padding-right:6px;
+}
+
+
+.ticket-section-additional-data-details
+{
+    float: left;
+    border-right: 1px solid;
+    padding-right: 10px;
+    margin-right: 5px;
+    min-height: 160px;
+}
+
+        .ticket-section-additional-data-details .display-label
+        {
+            font-weight: bold;
+        }
+
+.ticket-additional-data-row-details 
+{
+    float: left;
+    padding: 0px 12px 3px 6px;        
+}
+
+.ticket-Invoice-table
+{
+    border: #999999 1px solid;
+    border-collapse: collapse;
+    width: 200px;
+    color: black;
+    margin: 1.5em 0 0 0;
+}
+
+        .ticket-Invoice-table td
+        {
+            border: #999999 1px solid;
+            padding-right: 3px;
+            padding-left: 3px;
+            width: auto;
+            min-width: 80px;
+        }
+
+        .ticket-Invoice-table input 
+        {
+            width: 100%;
+        }
+
+        .ticket-Invoice-table .editor-label 
+        {
+            margin: .5em 0 0 0;
+            display: inline-block;
+            width: auto;
+            white-space: nowrap;
+            font-size: 80%;
+        }
+        
+        .ticket-Invoice-table .display-label 
+        {
+            margin: .5em 0 0 0;
+            display: inline-block;
+            width: auto;
+            white-space: nowrap;
+            font-size: 80%;
+        }
+        
+        .ticket-Invoice-table .display-field
+        {
+            margin: .5em 0 0 0;
+            display: inline-block;
+            width: auto;
+            white-space: nowrap;
+        }
+
+
+.customer-ticket-box {
+    float: left;
+    border: 1px solid;
+    padding: 10px;
+}
+
+.customer-ticket-box .display-label
+{
+    margin: 1em 1.2em 0 0;
+    display: inline-block;
+    width: 130px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.customer-ticket-link 
+{    
+    padding-left: 10px;
+    float:left;
+}
+
+
+.customer-pump-template
+{
+    margin: 1em 1.2em 0 0;
+    display: inline-block;
+    font-weight: bold;
+}
+
+
+.customer-ticket-inv-table 
+{
+    border: #999999 1px solid;
+    border-collapse: collapse;
+    width: 200px;
+    color: black;
+}
+
+.customer-ticket-inv-table td
+{
+    border: #999999 1px solid;
+    padding-right: 3px;
+    padding-left: 3px;
+    width: auto;
+    min-width: 80px;
+}
+
+.customer-ticket-ship-table {
+    border: #999999 1px solid;
+    border-collapse: collapse;
+
+}
+.customer-ticket-ship-table th
+{
+    border: #999999 1px solid;
+}
+
+.customer-ticket-ship-table td
+{
+    border: #999999 1px solid;
+    padding: 7px;
+    text-align: center;
+
+}
+
+.part-selection-box 
+{
+    float: left;
+    padding-right: 10px;    
+}
+
+
+.multiline textarea
+{
+    width: 300px;
+}
+
+.pump-template {
+
+    margin-top: 10px;    
+    margin-bottom: 10px;    
+}
+
+.pump-template .editor-label 
+{    
+    width: 86px;
+}
+
+.conciseTemplateSpec 
+{    
+    margin:0.5em 0 0 0;
+    display: inline;
+
+}
+
+.repair-ticket-pump-failed 
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 5px solid black;
+    
+}
+
+.repair-ticket-pump-dispatched 
+{
+    padding-bottom: 5px;
+    
+}
+
+.line-items-totals 
+{
+    width: 250px;
+}
+
+.line-items-totals .label {
+
+    float: left;
+    text-align: right;
+    width: 140px;
+    
+}
+
+.line-items-totals .total {
+
+    float: right;
+    font-weight: bold;
+}
+
+.line-items-total .label .taxRate 
+{
+    background-color: Yellow;    
+}
+
+.repair-edit-images 
+{
+    margin-top: 20px;
+}
+
+.repair-uploader {
+   margin-bottom: 20px;  
+}
+
+.repair-edit-label {
+     font-weight: bold;
+     margin-bottom: 10px;
+}
+

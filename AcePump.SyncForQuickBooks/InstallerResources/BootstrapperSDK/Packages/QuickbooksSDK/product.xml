@@ -1,0 +1,33 @@
+<Product
+  xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper"
+  ProductCode="QBFC13_0Installer">
+
+  <!-- Defines the list of files to be copied on build. -->
+  <PackageFiles CopyAllPackageFiles="true">
+    <PackageFile Name="QBFC13_0Installer.exe" HomeSite="https://acepumpalphadownloads.blob.core.windows.net/ace-pump-sync-for-quickbooks/QuickbooksSDK/QBFC13_0Installer.exe"/>
+  </PackageFiles>
+
+<InstallChecks>
+    <MsiProductCheck Property="IsQuickbooksSdkInstalled" Product="{42A7A870-C6A9-4EEE-8755-2755E3C60EE4}"/>
+ </InstallChecks>
+
+<Commands>
+    <Command PackageFile="QBFC13_0Installer.exe" Arguments="">
+
+      <InstallConditions>
+        <BypassIf Property="IsQuickbooksSdkInstalled"
+          Compare="ValueGreaterThan" Value="0"/>
+        <FailIf Property="AdminUser" 
+          Compare="ValueNotEqualTo" Value="True"
+         String="NotAnAdmin"/>
+      </InstallConditions>
+
+      <ExitCodes>
+        <ExitCode Value="0" Result="Success" />
+        <ExitCode Value="-1" Result="Fail" String="AU_Unaccepted" />
+        <DefaultExitCode Result="Fail" 
+          FormatMessageFromSystem="true" String="GeneralFailure" />
+      </ExitCodes>
+    </Command>
+  </Commands> 
+</Product>
