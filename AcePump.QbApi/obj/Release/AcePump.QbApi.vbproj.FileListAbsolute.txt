@@ -1,0 +1,10 @@
+C:\ace-pump-master\AcePump.QbApi\bin\Release\AcePump.QbApi.dll
+C:\ace-pump-master\AcePump.QbApi\bin\Release\AcePump.QbApi.pdb
+C:\ace-pump-master\AcePump.QbApi\bin\Release\AcePump.QbApi.xml
+C:\ace-pump-master\AcePump.QbApi\obj\Release\AcePump.QbApi.Resources.resources
+C:\ace-pump-master\AcePump.QbApi\obj\Release\AcePump.QbApi.vbproj.GenerateResource.cache
+C:\ace-pump-master\AcePump.QbApi\obj\Release\AcePump.QbApi.vbproj.CoreCompileInputs.cache
+C:\ace-pump-master\AcePump.QbApi\obj\Release\AcePump.QbApi.dll
+C:\ace-pump-master\AcePump.QbApi\obj\Release\AcePump.QbApi.xml
+C:\ace-pump-master\AcePump.QbApi\obj\Release\AcePump.QbApi.pdb
+C:\ace-pump-master\AcePump.QbApi\obj\Release\AcePump.QbApi.vbproj.AssemblyReference.cache

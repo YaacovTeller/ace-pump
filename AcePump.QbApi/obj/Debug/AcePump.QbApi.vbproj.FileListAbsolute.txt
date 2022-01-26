@@ -1,7 +1,7 @@
 C:\ace-pump-master\AcePump.QbApi\bin\Debug\AcePump.QbApi.dll
 C:\ace-pump-master\AcePump.QbApi\bin\Debug\AcePump.QbApi.pdb
 C:\ace-pump-master\AcePump.QbApi\bin\Debug\AcePump.QbApi.xml
-C:\ace-pump-master\AcePump.QbApi\obj\Debug\AcePump.QbApi.vbprojAssemblyReference.cache
+C:\ace-pump-master\AcePump.QbApi\obj\Debug\AcePump.QbApi.vbproj.AssemblyReference.cache
 C:\ace-pump-master\AcePump.QbApi\obj\Debug\AcePump.QbApi.Resources.resources
 C:\ace-pump-master\AcePump.QbApi\obj\Debug\AcePump.QbApi.vbproj.GenerateResource.cache
 C:\ace-pump-master\AcePump.QbApi\obj\Debug\AcePump.QbApi.vbproj.CoreCompileInputs.cache

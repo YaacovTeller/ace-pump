@@ -170,7 +170,7 @@ Namespace Areas.Employees.Controllers
                     hasConflict = DataSource.PartTemplates.Any(Function(x) x.Number = model.Number And x.PartTemplateID <> model.PartTemplateID)
                 End If
 
-                If model.Cost <> partTemplate.Cost Then
+                If model.Cost <> partTemplate.Cost Or model.Discount <> partTemplate.Discount Or model.Markup <> partTemplate.Markup Then
                     priceChanged = True
                 End If
 
@@ -202,23 +202,19 @@ Namespace Areas.Employees.Controllers
             Return Json({model}.ToDataSourceResult(New DataSourceRequest(), ModelState))
         End Function
 
-
+        '
         ' POST: /PartTemplate/BulkEditCost
 
         <HttpPost()>
-        Public Function BulkEditCost(<DataSourceRequest()> req As DataSourceRequest, <Bind(Prefix:="models")> parts As IEnumerable(Of PartTemplateGridRowModel)) As ActionResult
+        Public Function BulkEditCost(<Bind(Prefix:="models")> parts As IEnumerable(Of PartTemplateGridRowModel)) As ActionResult
             If parts Is Nothing Then
                 ModelState.AddModelError("parts", "There are no parts to change cost.")
             Else
-                'Dim customerIds As IQueryable(Of Integer) = parts.Select(Function(x) x.CustomerID).AsQueryable()
-                Dim partTemplateIds As IQueryable(Of Integer) = parts.Select(Function(x) x.PartTemplateID).AsQueryable()
-                DataSource.PartTemplates _
-                    .Where(Function(x) partTemplateIds.Contains(x.PartTemplateID)) _
-                    .Load()
-                '        If DataSource.PartTemplates.LoadChanges(parts) Then
+
                 For Each viewModel As PartTemplateGridRowModel In parts
-                    Dim updated As PartTemplate = DataSource.PartTemplates.Where(Function(x) x.PartTemplateID.Equals(viewModel.PartTemplateID))
+                    Dim updated As PartTemplate = DataSource.PartTemplates.FirstOrDefault(Function(x) x.PartTemplateID.Equals(viewModel.PartTemplateID))
                     updated.Cost = viewModel.Cost
+                    updated.PriceLastUpdated = Today
                 Next
 
                 If ModelState.IsValid Then

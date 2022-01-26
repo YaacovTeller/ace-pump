@@ -1,0 +1,123 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+AcePump.Common
+</name>
+</assembly>
+<members>
+<member name="T:AcePump.Common.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:AcePump.Common.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:AcePump.Common.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:AcePump.Common.BugzScout.BugzScoutClient">
+ <summary>
+ Client to post bugs to a FogBugz account.  Can be used with either FogBugz for your server or FogBugz on Demand (Fog Creek Hosted).
+ 
+ Documentation provided from the official Fog Creek help center - http://help.fogcreek.com/7566/bugzscout-for-automatic-crash-reporting.
+ </summary>
+</member>
+<member name="P:AcePump.Common.BugzScout.BugzScoutClient.DefaultUsername">
+ <summary>
+ The default full name of the FogBugz user the case creation or edit should be made as.  Used if you do not specify a username when you call Submit.
+ </summary>
+</member>
+<member name="P:AcePump.Common.BugzScout.BugzScoutClient.DefaultProject">
+ <summary>
+ The default project that new cases should be created in (must be a valid project name).  Used if you do not specify a project when you call Submit.
+ </summary>
+</member>
+<member name="P:AcePump.Common.BugzScout.BugzScoutClient.DefaultArea">
+ <summary>
+ The default area that new cases should go into(must be a valid area in the ScoutProject).  Used if you do not specify an area when you call Submit.
+ </summary>
+</member>
+<member name="P:AcePump.Common.BugzScout.BugzScoutClient.DefaultEmail">
+ <summary>
+ The default email address to associate with the report, often the customer’s email.  Used if you do not specify an email when you call Submit.
+ </summary>
+</member>
+<member name="P:AcePump.Common.BugzScout.BugzScoutClient.DefaultDefaultMessage">
+ <summary>
+ The default text that will be returned by the HTTP post request if no specific message exists for this bug.  Used if you do not specify a default message when you call Submit.
+ </summary>
+</member>
+<member name="P:AcePump.Common.BugzScout.BugzScoutClient.DefaultForceNewBug">
+ <summary>
+ Override the normal automatic consolidation of BugzScout reports by default.  Used if you do not specify force new bug when you call Submit.
+ </summary>
+</member>
+<member name="M:AcePump.Common.BugzScout.BugzScoutClient.Submit(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Boolean})">
+ <summary>
+ Submit a bug report to your FogBugz site via the BugzScout API.
+ </summary>
+ <param name="description">
+    This is the unique string that identifies the particular crash that has just occurred. BugzScout submissions will be consolidated into one case based on the Description. When a BugzScout submission arrives in FogBugz, if there are no existing cases with the exact same Description, then a new case is created in the ScoutProject and ScoutArea.If a case is found with a matching description, the new submission is APPENDED to that case’s history, and a new case will NOT be created in FogBugz.When appending to a case, the ScoutProject and ScoutArea fields are ignored.
+    Because BugzScout submissions are automatically consolidated, it is important to include appropriate information when constructing the Description.We always include the short error message that was generated, and then some additional information.For example, it is usually wise to include the application version number so that a similar crash in version 1.1 and in version 1.2 will NOT append to the same case. You may consider including the OS that the crash occurred on, if relevant.
+    Here is a good starting point:
+    MyAppName X.Y.Z SomekindofException: Exception message text here which yields something like this actual error from part of the FogBugz javascript code: FogBugz-8.9.72.0H: JS Error: TypeError: 'undefined' is not an object (evaluating 'bug.ixBug')
+ </param>
+ <param name="additionalInformation">The details about this particular crash. This is often a good place to put a stack trace, operating environment information, HTTP headers, or other details about what might have caused the error. Include as much information as you can, but beware of sending sensitive information. For example, in billing code, make sure your exception handling code strips out credit card information.</param>
+ <param name="username">The full name of the FogBugz user the case creation or edit should be made as.  Fog Creek recommend's using a Virtual User for this.</param>
+ <param name="project">The Project that new cases should be created in (must be a valid project name).  Note that if BugzScout appends to an existing case, this field is ignored.</param>
+ <param name="area">The Area that new cases should go into(must be a valid area in the ScoutProject).  Note that if BugzScout appends to an existing case, this field is ignored.</param>
+ <param name="email">An email address to associate with the report, often the customer’s email.  This overwrites the correspondent field on the case with each appended occurrence, so it is automatically included at the end of the case event as well.</param>
+ <param name="defaultMessage">This is the default text that will be returned by the HTTP post request. If the submission is appended to an existing case, and that case has some text in the “Scout Message” field, then that text will be returned instead.This is useful when you want to let your first user experiencing a crash know that “we are investigating the issue,” but update that message in the case later on when you know that “this problem is fixed in the next version.”</param>
+ <param name="forceNewBug">Override the normal automatic consolidation of BugzScout report - a new case will always created from this submission.</param>
+ <returns></returns>
+</member>
+<member name="P:AcePump.Common.BuildModes.BuildModeConfigurationElement.Name">
+ <summary>
+ Name of the build mode *as defined in the configuration manager*.  Make sure to add the BUILD_MODE_NAME
+ output variable to the AcePump.Common project with the same name.
+ </summary>
+</member>
+<member name="P:AcePump.Common.BuildModes.BuildModeConfigurationElement.ApplicationSubtitle">
+ <summary>
+ Large title text that shows up next to the Ace Pump logo on all pages.
+ </summary>
+</member>
+<member name="P:AcePump.Common.BuildModes.BuildModeConfigurationElement.AuthTicketsValidAfterDate">
+ <summary>
+ For checking ticket issue date against to force logout.
+ </summary>
+</member>
+<member name="P:AcePump.Common.BuildModes.MobileAppConfigurationElement.CspDefaultSrc">
+ <summary>
+ Additions to the default-src for the Content-Security-Policy in this build mode.
+ </summary>
+</member>
+<member name="P:AcePump.Common.BuildModes.PtpApiConfigurationElement.UriV1">
+ <summary>
+ The URI the AcePump.Web project WebApi section is hosted at in this build mode.  This is a special instance
+ of WebApi hosted inside an older MVC project.  It should not be used for new development.
+ </summary>
+</member>
+<member name="P:AcePump.Common.BuildModes.PtpApiConfigurationElement.UriV2">
+ <summary>
+ The URI the AcePump.WebApi project is hosted at in this build mode.  This is newer version of the API and
+ should be used for all new development.
+ </summary>
+</member>
+<member name="M:AcePump.Common.Tools.Files.FileUtil.IsJPG(System.Byte[])">
+ <summary>
+ Is this a JPG?
+ </summary>
+ <param name="FileBytes">FileBytes is a member of the FileUpload control and provides the underlying data in the uploaded file.</param>
+ <returns>True if the magic number indicates this is an image, otherwise false.</returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

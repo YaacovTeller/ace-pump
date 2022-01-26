@@ -1,6 +1,6 @@
 C:\ace-pump-master\AcePump.Ui.Web\bin\AcePump.Ui.Web.dll
 C:\ace-pump-master\AcePump.Ui.Web\bin\AcePump.Ui.Web.pdb
-C:\ace-pump-master\AcePump.Ui.Web\obj\Debug\AcePump.Ui.Web.csprojAssemblyReference.cache
+C:\ace-pump-master\AcePump.Ui.Web\obj\Debug\AcePump.Ui.Web.csproj.AssemblyReference.cache
 C:\ace-pump-master\AcePump.Ui.Web\obj\Debug\AcePump.Ui.Web.csproj.CoreCompileInputs.cache
 C:\ace-pump-master\AcePump.Ui.Web\obj\Debug\AcePump.Ui.Web.dll
 C:\ace-pump-master\AcePump.Ui.Web\obj\Debug\AcePump.Ui.Web.pdb

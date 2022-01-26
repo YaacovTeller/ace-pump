@@ -60,7 +60,7 @@ C:\ace-pump-master\AcePump.Domain\bin\Debug\System.Web.WebPages.xml
 C:\ace-pump-master\AcePump.Domain\bin\Debug\nunit.framework.xml
 C:\ace-pump-master\AcePump.Domain\bin\Debug\Microsoft.Web.Infrastructure.xml
 C:\ace-pump-master\AcePump.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
-C:\ace-pump-master\AcePump.Domain\obj\Debug\AcePump.Domain.vbprojAssemblyReference.cache
+C:\ace-pump-master\AcePump.Domain\obj\Debug\AcePump.Domain.vbproj.AssemblyReference.cache
 C:\ace-pump-master\AcePump.Domain\obj\Debug\AcePump.Domain.Resources.resources
 C:\ace-pump-master\AcePump.Domain\obj\Debug\AcePump.Domain.vbproj.GenerateResource.cache
 C:\ace-pump-master\AcePump.Domain\obj\Debug\AcePump.Domain.vbproj.CoreCompileInputs.cache

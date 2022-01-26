@@ -294,6 +294,7 @@ Namespace Areas.Employees.Controllers
                     record.PartTemplate.Description = model.Description
 
                     record.PartTemplate.Cost = record.Assembly.Parts.Sum(Function(x) x.PartsQuantity * x.PartTemplate.Cost)
+                    record.PartTemplate.PriceLastUpdated = Today
 
                     DataSource.SaveChanges()
 

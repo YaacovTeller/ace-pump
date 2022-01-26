@@ -4,7 +4,7 @@ C:\ace-pump-master\AcePump.Rdlc\bin\Debug\Microsoft.ReportViewer.Common.dll
 C:\ace-pump-master\AcePump.Rdlc\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 C:\ace-pump-master\AcePump.Rdlc\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
 C:\ace-pump-master\AcePump.Rdlc\bin\Debug\Microsoft.ReportViewer.WebForms.dll
-C:\ace-pump-master\AcePump.Rdlc\obj\Debug\AcePump.Rdlc.csprojAssemblyReference.cache
+C:\ace-pump-master\AcePump.Rdlc\obj\Debug\AcePump.Rdlc.csproj.AssemblyReference.cache
 C:\ace-pump-master\AcePump.Rdlc\obj\Debug\AcePump.Rdlc.csproj.CoreCompileInputs.cache
 C:\ace-pump-master\AcePump.Rdlc\obj\Debug\AcePump.Rdlc.csproj.CopyComplete
 C:\ace-pump-master\AcePump.Rdlc\obj\Debug\AcePump.Rdlc.dll

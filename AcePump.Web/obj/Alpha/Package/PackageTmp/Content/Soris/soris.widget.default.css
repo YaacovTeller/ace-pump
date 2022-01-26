@@ -1,0 +1,178 @@
+﻿/*
+ * Masks
+ */
+
+.s-widget-loading-image {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+
+    vertical-align: middle;
+    margin-left: 10px;
+
+    background-image: url("Default/loading-image.gif");
+    background-size: contain;
+}
+
+.s-widget-mask {
+    background-color: rgba(0,0,0,0.5);
+}
+
+/*
+ * Widget Manager
+ */
+
+.s-message {
+    box-sizing: content-box;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 5px;
+    
+    border: 1px solid black;
+    background: rgb(95, 200, 125);
+    
+    font-size: 18px;
+    text-align: center;
+    color: black;
+}
+
+/*
+ * Widgets
+ */
+
+.s-widget-container {
+    text-align: center;
+    vertical-align: top;
+
+    display: inline-block;
+
+    margin: 5px;
+}
+
+.s-widget-header {
+    font-size: 1.17em;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.s-widget-footer {
+    margin-top: 10px;
+    width: 230px;
+}
+
+.s-widget-container .s-filter-container {
+    display: block;
+    
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.s-direction-change-widget, .s-pie-chart-widget {
+    width: 250px;
+    height: 350px;
+}
+
+.s-bar-chart-widget, .s-line-chart-widget {
+    width: 500px;
+    height: 430px;
+}
+
+.s-widget-container .s-filter {
+    width: 50px;
+}
+
+.s-dchange-amount {
+    font-size: 3em;
+}
+
+.s-negative-change {
+    color: Red;
+}
+
+.s-positive-change {
+    color: Green;
+}
+
+.s-widget {
+    text-align: center;
+}
+
+.s-widget-date-range .k-datepicker {
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-bottom: 3px;
+}
+
+.s-clearfix {
+    clear: both;
+}
+
+/*
+ * Chart Widgets
+ */
+ 
+ .s-no-data {
+     box-sizing: content-box;
+     width: 180px;
+     margin-right: auto;
+     margin-left: auto;
+     margin-bottom: 10px;
+     font-style: italic;
+     font-size: 14px;
+     border: 3px double black;
+     padding: 5px;
+     background-color: rgb(230, 230, 230);
+ }
+
+.s-scrollable-widget-container {
+    overflow: auto;
+}
+ 
+.s-chart svg {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*
+ * Filters
+ */
+ 
+/* EMPTY RULE: .s-filter-container
+.s-filer-container {
+
+}*/
+ 
+.s-filter {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/*
+ * Sprites
+ */
+ 
+.s-sprite {
+    display: inline-block;
+    background-image: url("Default/sprites.png");
+    
+    width: 64px;
+    height:64px;
+}
+
+.s-sprite-green .s-sprite-down-arrow {
+    background-position: 64px 0;
+}
+
+.s-sprite-green .s-sprite-up-arrow {
+    background-position: 64px 64px;
+}
+
+.s-sprite-red .s-sprite-down-arrow {
+    background-position: 0 0;
+}
+
+.s-sprite-red .s-sprite-up-arrow {
+    background-position: 0 64px;
+}

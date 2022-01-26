@@ -55,7 +55,7 @@ Namespace Areas.Employees.Controllers
         '
         ' GET: /Pump/Template/Details/id
 
-        <HttpGet()> _
+        <HttpGet()>
         Public Function Details(id As Integer) As ActionResult
             Dim pumpTemplate As PumpTemplate = DataSource _
                                                 .PumpTemplates _
@@ -70,6 +70,23 @@ Namespace Areas.Employees.Controllers
                 Return RedirectToAction("Index")
             End If
         End Function
+
+        ''
+        '' GET: /Pump/Template/DetailsJSON/id
+
+        '<HttpGet()>
+        'Public Function DetailsJSON(id As Integer) As JsonResult
+
+        '    Dim pumpTemplate As PumpTemplate = DataSource _
+        '                                        .PumpTemplates _
+        '                                        .Include(Function(x) x.Parts) _
+        '                                        .SingleOrDefault(Function(x) x.PumpTemplateID = id)
+        '    If pumpTemplate IsNot Nothing Then
+        '        Return Json(pumpTemplate.Parts.ToList(), "json")
+        '    Else
+        '        '    Return RedirectToAction("Index")
+        '    End If
+        'End Function
 
         '
         ' POST: /Pump/Template/StartsWith

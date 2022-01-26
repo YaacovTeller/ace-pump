@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\ace-pump-master\AcePump.Web\obj\Alpha\Package\PackageTmp" />
+  <setAcl path="C:\ace-pump-master\AcePump.Web\obj\Alpha\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="C:\ace-pump-master\AcePump.Web\obj\Alpha\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>

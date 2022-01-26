@@ -202,7 +202,7 @@ C:\ace-pump-master\AcePump.WebApi\bin\ko\System.Spatial.resources.dll
 C:\ace-pump-master\AcePump.WebApi\bin\ru\System.Spatial.resources.dll
 C:\ace-pump-master\AcePump.WebApi\bin\zh-Hans\System.Spatial.resources.dll
 C:\ace-pump-master\AcePump.WebApi\bin\zh-Hant\System.Spatial.resources.dll
-C:\ace-pump-master\AcePump.WebApi\obj\Debug\AcePump.WebApi.csprojAssemblyReference.cache
+C:\ace-pump-master\AcePump.WebApi\obj\Debug\AcePump.WebApi.csproj.AssemblyReference.cache
 C:\ace-pump-master\AcePump.WebApi\obj\Debug\AcePump.WebApi.csproj.CoreCompileInputs.cache
 C:\ace-pump-master\AcePump.WebApi\obj\Debug\AcePump.WebApi.csproj.CopyComplete
 C:\ace-pump-master\AcePump.WebApi\obj\Debug\AcePump.WebApi.dll

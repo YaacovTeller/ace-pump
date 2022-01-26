@@ -1,0 +1,127 @@
+﻿/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+body
+{
+    font-size: 75%;
+    font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    color: #696969;
+}
+
+.logo
+{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.page
+{
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 3%;
+}
+
+h2 
+{
+    text-align:center;    
+}
+
+
+fieldset ol {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.display-label,
+.editor-label
+{
+    margin: 1em 0 0 0;
+    display: inline;
+    width: 30%;
+}
+
+.display-field,
+.editor-field
+{
+    margin:0.5em 0 0 0;
+    display: inline;
+}
+
+.submit-area {
+    float:right;
+    margin-top: 0.3em;
+    margin-right: 0.3em;
+}
+
+.mobile-button {
+    width: 7em;
+    height: 5em;   
+    white-space: pre-wrap;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+.deliveryticket-summary .label {
+    margin: .5em 0 0 0;
+    display: inline;  
+}
+
+.deliveryticket-summary .field {
+    font-weight: bold;
+    display: inline;  
+}
+
+.location-summary {
+    float: left;
+    padding-right: 10%
+}
+
+.ticket-details-summary {
+    float: left;
+}
+
+.existingSignature {
+    display: inline;
+}
+
+.logout {
+    text-align:center;
+}

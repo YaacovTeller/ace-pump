@@ -107,7 +107,7 @@ C:\ace-pump-master\AcePump.Web\bin\ru-RU\Kendo.Mvc.resources.dll
 C:\ace-pump-master\AcePump.Web\bin\sv-SE\Kendo.Mvc.resources.dll
 C:\ace-pump-master\AcePump.Web\bin\uk-UA\Kendo.Mvc.resources.dll
 C:\ace-pump-master\AcePump.Web\bin\zh-CN\Kendo.Mvc.resources.dll
-C:\ace-pump-master\AcePump.Web\obj\Debug\AcePump.Web.vbprojAssemblyReference.cache
+C:\ace-pump-master\AcePump.Web\obj\Debug\AcePump.Web.vbproj.AssemblyReference.cache
 C:\ace-pump-master\AcePump.Web\obj\Debug\AcePump.Web.Resources.resources
 C:\ace-pump-master\AcePump.Web\obj\Debug\AcePump.Web.vbproj.GenerateResource.cache
 C:\ace-pump-master\AcePump.Web\obj\Debug\AcePump.Web.vbproj.CoreCompileInputs.cache

@@ -1,0 +1,50 @@
+﻿    fieldset li {
+        float: left;
+        
+        width: 160px;
+        height: 60px;
+        
+        border: 1px solid black;
+        padding: 5px;
+    }
+    
+    p {
+        clear: both;
+        padding-top: 20px;
+    }
+    
+    .display-label, .editor-label {
+        display: block;
+        margin: 0px;
+        font-weight: bold;
+    }
+    
+    .main-details .display-label {
+        width: auto;
+        margin-bottom: 5px;
+    }   
+    
+    .main-details {   
+        margin: 20px 0px;
+        width: auto;
+    }
+    
+    .main-details .template-number, .main-details .template-id {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-right: 50px;
+        padding-left: 10px;
+        
+        border: 1px inset black;
+        margin: 2px;
+    }
+    
+    .main-details .template-number {
+        clear: both;
+        float: right;
+        width: 800px;
+    }
+    
+    .main-details .template-id {
+        width: 50px;
+    }
