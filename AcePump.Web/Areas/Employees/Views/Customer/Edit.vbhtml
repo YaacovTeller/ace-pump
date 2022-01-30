@@ -146,11 +146,35 @@ End Code
                 </div>
             </li>
             <li>
-                <div class="display-label">Qb Invoice Class</div>
-                <div class="display-field">
-                    @Html.DisplayFor(Function(model) model.QbInvoiceClassName)
-                    @Html.HiddenFor(Function(model) model.QbInvoiceClassID)
+                @*<div class="display-label">Qb Invoice Class</div>
+        <div class="display-field">
+            @Html.DisplayFor(Function(model) model.QbInvoiceClassName)
+            @Html.HiddenFor(Function(model) model.QbInvoiceClassID)
+        </div>*@
+
+                <div class="editor-label">
+                    @Html.LabelFor(Function(model) model.QbInvoiceClassID, "QuickBooks Class")
                 </div>
+                <div class="editor-field">
+                    @(Html.Kendo().ComboBoxFor(Function(model) model.QbInvoiceClassID) _
+                        .DataTextField("QbInvoiceClassName") _
+                        .DataValueField("Id") _
+                        .MinLength(2) _
+                        .Placeholder("Start typing ...") _
+                        .Filter(FilterType.StartsWith) _
+                        .Text(Model.QbInvoiceClassName) _
+                        .AutoBind(False) _
+                     .DataSource(Sub(dataSource)
+                                     dataSource _
+                                     .Read(Function(reader) reader.Action("QbInvoiceClassList", "Customer") _
+                                                                  .Type(HttpVerbs.Post)
+                                           ) _
+                                     .ServerFiltering(True)
+                                 End Sub)
+                    )
+                    @Html.ValidationMessageFor(Function(model) model.QbInvoiceClassID)
+                </div>
+
             </li>
             <li>
                 <div class="editor-label">
