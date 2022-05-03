@@ -3,11 +3,19 @@ The base color for this template is #5c87b2. If you'd like
 to use a different color start by replacing all instances of
 #5c87b2 with your new color.
 ----------------------------------------------------------*/
-body
-{
-    background-color: #5c87b2;
-    font-size: 75%;
-    font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
+@font-face {
+    font-family: ETmodules;
+    font-display: block;
+    src: url(https://secureservercdn.net/72.167.241.46/vzh.ebd.myftpupload.com/wp-content/themes/Divi/core/admin/fonts/modules/all/modules.eot);
+    src: url(https://secureservercdn.net/72.167.241.46/vzh.ebd.myftpupload.com/wp-content/themes/Divi/core/admin/fonts/modules/all/modules.eot?#iefix) format("embedded-opentype"),url(https://secureservercdn.net/72.167.241.46/vzh.ebd.myftpupload.com/wp-content/themes/Divi/core/admin/fonts/modules/all/modules.ttf) format("truetype"),url(https://secureservercdn.net/72.167.241.46/vzh.ebd.myftpupload.com/wp-content/themes/Divi/core/admin/fonts/modules/all/modules.woff) format("woff"),url(https://secureservercdn.net/72.167.241.46/vzh.ebd.myftpupload.com/wp-content/themes/Divi/core/admin/fonts/modules/all/modules.svg#ETmodules) format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: black;
+    font-size: 16px;
+    font-family: 'Open Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #696969;
@@ -76,7 +84,7 @@ first child of the left and right table columns */
 page width. Or, you can specify an exact pixel width. */
 .page
 {
-    width: 90%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -92,20 +100,22 @@ header, #header
 header h1, #header h1
 {
     font-weight: bold;
-    padding: 5px 0;
+    padding: 24px 0 0 0;
     margin: 0;
-    color: #fff;
+    color: rgba(0,0,0,0.85);
     border: none;
     line-height: 2em;
     font-size: 32px !important;
 }
 
-#main
-{
+#main {
+    box-sizing: border-box;
     background: #fff;
     padding: 30px 30px 15px 30px;
     margin-bottom: 30px;
     _height: 1px; /* only IE6 applies CSS properties starting with an underscore */
+    width: 90%;
+    margin: auto;
 }
 
 footer, #footer
@@ -123,7 +133,8 @@ footer, #footer
 #menu
 {
     position: relative;
-    margin: 0;
+    margin: auto;
+    width: 90%;
 }
 
 #menu .t-item
@@ -199,18 +210,23 @@ div#title
 {
     display:block;
     text-align:left;
-    height: 168px;
+    height: 114px;
+    margin-top: 0;
+    background: white;
+    margin-bottom: 32px;
+    padding: 0;
 }
 
 #title img {
     float: left;
-    width: 200px;
-    height: 168px;
+    width: auto;
+    height: 114px;
     display: block;
+    padding: 0px 34px;
 }
 
 #title h1 {
-    height: 128px;
+    height: 91px;
     margin-left: 220px;
 }
 
@@ -219,21 +235,16 @@ div#title
     font-size:1.1em;
     display:block;
     text-align: right;
-    margin: 10px;
-    color:White;
-    height: 40px;
+    color: #e09900;
+    height: 21px;
+    margin: 0 5%;
     vertical-align: bottom;
+    font-weight: 600;
 }
 
-#logindisplay a:link
+#logindisplay a:link, #logindisplay a:visited
 {
-    color: white;
-    text-decoration: underline;
-}
-
-#logindisplay a:visited
-{
-    color: white;
+    color: #e09900;
     text-decoration: underline;
 }
 
@@ -348,4 +359,41 @@ fieldset li {
     width: 50px;
     height: 50px;
     float: left;
+}
+
+
+/* new */
+div#et-info {
+    color: white;
+    height: 24.5px;
+    width: 80%;
+    margin: auto;
+    max-width: 1098px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding-top: 6px;
+    padding-bottom: 3px;
+}
+
+span#et-info-phone:before {
+    content: "\e090";
+    position: relative;
+    top: 2px;
+    font-family: ETmodules!important;
+    margin-right: 2px;
+}
+
+#et-info-email:before {
+    content: "\e076";
+    margin-right: 4px;
+    font-family: ETmodules!important;
+    color: white;
+    padding-left: 13px;
+}
+
+#et-info-email:hover {
+    opacity: 0.7;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
