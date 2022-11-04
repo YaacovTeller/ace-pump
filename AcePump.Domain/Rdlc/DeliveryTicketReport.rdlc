@@ -427,17 +427,17 @@
               <Width>1.03501in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.50214in</Width>
+              <Width>4.14946in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.9017in</Width>
             </TablixColumn>
-            <TablixColumn>
+            <!--<TablixColumn> 2.50214 + 1.64732
               <Width>0.81095in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.83637in</Width>
-            </TablixColumn>
+            </TablixColumn>-->
             <TablixColumn>
               <Width>0.98484in</Width>
             </TablixColumn>
@@ -582,7 +582,7 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
-                <TablixCell>
+                <!--<TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox17">
                       <CanGrow>true</CanGrow>
@@ -651,7 +651,7 @@
                       </Style>
                     </Textbox>
                   </CellContents>
-                </TablixCell>
+                </TablixCell>-->
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox25">
@@ -791,7 +791,7 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
-                <TablixCell>
+                <!--<TablixCell>
                   <CellContents>
                     <Textbox Name="UnitPrice">
                       <CanGrow>true</CanGrow>
@@ -824,8 +824,8 @@
                       </Style>
                     </Textbox>
                   </CellContents>
-                </TablixCell>
-                <TablixCell>
+                </TablixCell>-->
+                <!--<TablixCell>
                   <CellContents>
                     <Textbox Name="UnitDiscount">
                       <CanGrow>true</CanGrow>
@@ -859,7 +859,7 @@
                     </Textbox>
                     <rd:Selected>true</rd:Selected>
                   </CellContents>
-                </TablixCell>
+                </TablixCell>-->
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="UnitPriceAfterDiscount">
@@ -933,7 +933,7 @@
             <TablixRow>
               <Height>0.46527in</Height>
               <TablixCells>
-                <TablixCell>
+                <!--<TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox1">
                       <CanGrow>true</CanGrow>
@@ -998,7 +998,7 @@
                       </Style>
                     </Textbox>
                   </CellContents>
-                </TablixCell>
+                </TablixCell>-->
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox3">
@@ -1207,8 +1207,8 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
-            <TablixMember />
+            <!--<TablixMember />
+            <TablixMember />-->
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
