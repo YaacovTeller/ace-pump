@@ -8,4 +8,4 @@ C:\ace-pump-master\AcePump.Rdlc\obj\Release\AcePump.Rdlc.csproj.CoreCompileInput
 C:\ace-pump-master\AcePump.Rdlc\obj\Release\AcePump.Rdlc.csproj.CopyComplete
 C:\ace-pump-master\AcePump.Rdlc\obj\Release\AcePump.Rdlc.dll
 C:\ace-pump-master\AcePump.Rdlc\obj\Release\AcePump.Rdlc.pdb
-C:\ace-pump-master\AcePump.Rdlc\obj\Release\AcePump.Rdlc.csproj.AssemblyReference.cache
+C:\ace-pump-master\AcePump.Rdlc\obj\Release\AcePump.Rdlc.csprojAssemblyReference.cache
