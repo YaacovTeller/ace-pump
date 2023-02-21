@@ -1,4 +1,5 @@
-﻿Imports Interop.QBFC13
+﻿'Imports Interop.QBFC13
+Imports Interop.QBFC15
 
 Namespace Qb
 
@@ -34,10 +35,9 @@ Namespace Qb
             _sessionManager = New QBSessionManager()
 
             Dim assemblyName As String = My.Application.Info.AssemblyName
-
             _sessionManager.OpenConnection(appID, assemblyName)
+            'MsgBox("Beginning session with: " + QbCompanyFile)
             _sessionManager.BeginSession(QbCompanyFile, ENOpenMode.omDontCare)
-
             _messageSetRequest = GetLatestMessageSetRequest(SessionManager)
             ClearMessagesetRequest()
         End Sub
@@ -61,6 +61,7 @@ Namespace Qb
         End Sub
 
         Public Function TestConnection(ByRef responseMessage As String) As Boolean
+            '            MessageBox.Show("Starting TestConnection")
             ClearMessagesetRequest()
 
             Dim companyQuery As ICompanyQuery = MessageSetRequest.AppendCompanyQueryRq()

@@ -1,4 +1,5 @@
-﻿Imports Interop.QBFC13
+﻿'Imports Interop.QBFC13
+Imports Interop.QBFC15
 
 Namespace Qb
 

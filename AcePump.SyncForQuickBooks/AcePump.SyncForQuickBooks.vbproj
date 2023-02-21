@@ -32,7 +32,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>Publish.htm</WebPage>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>2.1.0.0</ApplicationVersion>
+    <ApplicationVersion>2.2.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -113,6 +113,10 @@
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\lib\Interop.QBFC13.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.QBFC15">
+      <HintPath>..\..\Program Files (x86)\Common Files\Intuit\QuickBooks\Interop.QBFC15.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -444,7 +448,6 @@
   <ItemGroup>
     <Content Include="Resources\JaggedEdgesQbDialog.png" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

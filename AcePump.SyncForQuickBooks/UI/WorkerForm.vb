@@ -48,6 +48,9 @@ Namespace UI
                         End If
 
                         _doneSoFar = currentWeight + _doneSoFar
+                        If _doneSoFar > WorkerProgressBar.Maximum Then
+                            _doneSoFar = WorkerProgressBar.Maximum
+                        End If
                         WorkerProgressBar.Value = _doneSoFar
                         'Debug.WriteLine("Stage: " & currentUIChangeOnProgress.StatusLabelText & _
                         '                " Weight: " & currentWeight & _

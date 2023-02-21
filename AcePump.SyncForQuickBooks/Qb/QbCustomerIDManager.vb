@@ -1,4 +1,5 @@
-﻿Imports Interop.QBFC13
+﻿'Imports Interop.QBFC13
+Imports Interop.QBFC15
 Imports System.Threading
 Imports AcePump.SyncForQuickBooks.Qb.Models
 Imports AcePump.SyncForQuickBooks.PtpApi.Models
