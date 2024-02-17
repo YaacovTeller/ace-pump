@@ -176,3 +176,8 @@
 .s-sprite-red .s-sprite-up-arrow {
     background-position: 0 64px;
 }
+
+.status-flag {
+    font-size: 18px;
+    margin-left: 5px;
+}
