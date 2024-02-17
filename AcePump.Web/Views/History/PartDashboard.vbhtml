@@ -164,19 +164,19 @@ Case 805 - Runtime Widgets Temporarily Hidden
     .Title("Top Reasons Repaired") _
     .ChartType(ChartType.Pie) _
     .Filters(Sub(filters)
-                     filters.NumericSpinner(Sub(spinner)
-                                                    spinner.Min(1)
-                                                    spinner.Max(5)
-                                                    spinner.ParameterName("NumberToShow")
-                                                    spinner.TextBefore("Show the top")
-                                                    spinner.TextAfter("reasons repaired.")
-                                                    spinner.DefaultValue(2)
-                                            End Sub)
+                 filters.NumericSpinner(Sub(spinner)
+                                            spinner.Min(1)
+                                            spinner.Max(5)
+                                            spinner.ParameterName("NumberToShow")
+                                            spinner.TextBefore("Show the top")
+                                            spinner.TextAfter("reasons repaired.")
+                                            spinner.DefaultValue(2)
+                                        End Sub)
              End Sub) _
     .CrossLink(Sub(crossLink)
-                       crossLink.Action("ReasonRepairedDashboard", "History")
-                       crossLink.CategoryParameterName("reasonRepaired")
-               End Sub)         
+                   crossLink.Action("ReasonRepairedDashboard", "History")
+                   crossLink.CategoryParameterName("reasonRepaired")
+               End Sub)
 )
 @*Case 805 - Runtime Widgets Temporarily Hidden
 @(Html.Widget.Chart(Of String) _
@@ -203,18 +203,22 @@ Case 805 - Runtime Widgets Temporarily Hidden
 *@
 
 @(Html.Kendo().Grid(Of PartInspectionDashboardGridRowModel) _
-    .Name("recordsGrid") _
-    .Filterable() _
-    .Sortable() _
-    .Pageable() _
-    .Columns(Sub(c)
-                     c.Bound(Function(dt) dt.DeliveryTicketID).Filterable(FilterableType.NumericId)
-                     c.Bound(Function(dt) dt.CustomerName)
-                     c.Bound(Function(dt) dt.LeaseName)
-                     c.Bound(Function(dt) dt.WellNumber)
-                     c.Bound(Function(dt) dt.PartDescription)
-                     c.Bound(Function(dt) dt.TicketDate).Format("{0:d}")
-                     c.Template(@@<text></text>).ClientTemplate(
+                .Name("recordsGrid") _
+                .Filterable() _
+                .Sortable() _
+                .Pageable() _
+                .Columns(Sub(c)
+        c.Bound(Function(dt) dt.DeliveryTicketID).Filterable(FilterableType.NumericId) _
+            .ClientTemplate(
+            "#=DeliveryTicketID#" &
+            "#if(IsSignificantDesignChange){#<i title=""Significant design change"" class=""status-flag fa fa-exclamation""></i>#}#"
+            )
+        c.Bound(Function(dt) dt.CustomerName)
+        c.Bound(Function(dt) dt.LeaseName)
+        c.Bound(Function(dt) dt.WellNumber)
+        c.Bound(Function(dt) dt.PartDescription)
+        c.Bound(Function(dt) dt.TicketDate).Format("{0:d}")
+        c.Template(@@<text></text>).ClientTemplate(
                                     "<a href=""" & Url.Action("RepairDetails", "DeliveryTicket") & "/#=DeliveryTicketID#"" target=""_blank"" class=""k-button k-button-icontext"">View Ticket</a>"
                                   )
     End Sub) _

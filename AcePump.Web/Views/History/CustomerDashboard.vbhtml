@@ -41,55 +41,55 @@ End Code
 @Html.Partial("_CommonWidgetManagerElements", Model.ManagerConfiguration)
 
 @(Html.Widget().PageConfiguration() _
-    .RequestMedia(Sub(media)
-                          media.Url(Url.Action("WidgetQuery", "History"))
-                          media.Type("ajax")
-                  End Sub) _
-    .QueryOnLoad(True) _
-    .GlobalQueryUrl(Url.Action("GlobalQuery", "History"))
+                .RequestMedia(Sub(media)
+                                  media.Url(Url.Action("WidgetQuery", "History"))
+                                  media.Type("ajax")
+                              End Sub) _
+                .QueryOnLoad(True) _
+                .GlobalQueryUrl(Url.Action("GlobalQuery", "History"))
 )
 
 @(Html.Widget().GlobalFilterPanel() _
-    .GlobalFilters(Sub(filters)
-                           Select Case Model.ManagerConfiguration.CustomerSelectionType
-                               Case SelectionType.Any
+                .GlobalFilters(Sub(filters)
+                                   Select Case Model.ManagerConfiguration.CustomerSelectionType
+                                       Case SelectionType.Any
+                                           filters.External(Sub(ext)
+                                                                ext.ParameterName("CustomerID")
+                                                                ext.JqInput("$(""#CustomerID"")")
+                                                                ext.JqContainer("$(""#CustomerID"").closest("".k-combobox"")")
+                                                                ext.TextBefore("Customer")
+                                                                ext.DisplayTextParameterName("CustomerName")
+                                                            End Sub)
+
+                                       Case SelectionType.AccessListOnly
+                                           filters.External(Sub(ext)
+                                                                ext.ParameterName("CustomerID")
+                                                                ext.JqInput("$(""#CustomerID"")")
+                                                                ext.JqContainer("$(""#CustomerID_DropDown"").closest("".k-dropdown"")")
+                                                                ext.TextBefore("Customer")
+                                                                ext.DisplayTextParameterName("CustomerName")
+                                                            End Sub)
+
+                                       Case SelectionType.None
+                                           filters.StaticValue("CustomerID", String.Join(","c, Model.ManagerConfiguration.CustomersIDsThatMayBeAccessed.Values.ToList()))
+                                   End Select
+
                                    filters.External(Sub(ext)
-                                                            ext.ParameterName("CustomerID")
-                                                            ext.JqInput("$(""#CustomerID"")")
-                                                            ext.JqContainer("$(""#CustomerID"").closest("".k-combobox"")")
-                                                            ext.TextBefore("Customer")
-                                                            ext.DisplayTextParameterName("CustomerName")
+                                                        ext.ParameterName("LeaseID")
+                                                        ext.JqInput("$(""#LeaseID"")")
+                                                        ext.JqContainer("$(""#LeaseID"").closest("".k-combobox"")")
+                                                        ext.TextBefore("Lease")
+                                                        ext.DisplayTextParameterName("LeaseName")
                                                     End Sub)
-                                   
-                               Case SelectionType.AccessListOnly
+
                                    filters.External(Sub(ext)
-                                                            ext.ParameterName("CustomerID")
-                                                            ext.JqInput("$(""#CustomerID"")")
-                                                            ext.JqContainer("$(""#CustomerID_DropDown"").closest("".k-dropdown"")")
-                                                            ext.TextBefore("Customer")
-                                                            ext.DisplayTextParameterName("CustomerName")
+                                                        ext.ParameterName("WellID")
+                                                        ext.JqInput("$(""#WellID"")")
+                                                        ext.JqContainer("$(""#WellID"").closest("".k-combobox"")")
+                                                        ext.TextBefore("Well")
+                                                        ext.DisplayTextParameterName("WellNumber")
                                                     End Sub)
-                                   
-                               Case SelectionType.None
-                                   filters.StaticValue("CustomerID", String.Join(","c, Model.ManagerConfiguration.CustomersIDsThatMayBeAccessed.Values.ToList()))
-                           End Select
-                           
-                           filters.External(Sub(ext)
-                                                    ext.ParameterName("LeaseID")
-                                                    ext.JqInput("$(""#LeaseID"")")
-                                                    ext.JqContainer("$(""#LeaseID"").closest("".k-combobox"")")
-                                                    ext.TextBefore("Lease")
-                                                    ext.DisplayTextParameterName("LeaseName")
-                                            End Sub)
-                           
-                           filters.External(Sub(ext)
-                                                    ext.ParameterName("WellID")
-                                                    ext.JqInput("$(""#WellID"")")
-                                                    ext.JqContainer("$(""#WellID"").closest("".k-combobox"")")
-                                                    ext.TextBefore("Well")
-                                                    ext.DisplayTextParameterName("WellNumber")
-                                            End Sub)
-                   End Sub)
+                               End Sub)
 )
 
 @(Html.Widget().DirectionChange() _
@@ -218,8 +218,8 @@ End Code
                        crossLink.CategoryParameterName("reasonRepaired")
                End Sub)
 )
-@* Case 805 - Runtime Widgets Temporarily Hidden
-@(Html.Widget.Chart(Of String) _
+ @*Case 805 - Runtime Widgets Temporarily Hidden*@
+@*@(Html.Widget.Chart(Of String) _
     .Id("AveragePumpRuntime") _
     .Title("Average Pump Runtime") _
     .ChartType(ChartType.Bar) _
@@ -240,23 +240,23 @@ End Code
                                            events.CrossLink("AveragePumpRuntime_CrossLink")
                                    End Sub)
                End Sub)
-)
-*@
+)*@
+
 @(Html.Widget().Chart(Of String) _
-    .Id("PullsByQuarter") _
-    .Title("Pulls") _
-    .ChartType(ChartType.Pie) _
-    .ShowLegend(True) _
-    .Filters(Sub(filters)
-                     filters.RadioButtons(Sub(radio)
+                .Id("PullsByQuarter") _
+                .Title("Pulls") _
+                .ChartType(ChartType.Pie) _
+                .ShowLegend(True) _
+            .Filters(Sub(filters)
+                         filters.RadioButtons(Sub(radio)
                                                   radio.ParameterName("period")
                                                   radio.DefaultValue(CInt(TimePeriod.Quarter))
                                                   radio.Options(Sub(options)
-                                                                        options.Add().Text("By Quarter").Value(CInt(TimePeriod.Quarter))
-                                                                        options.Add().Text("By Month").Value(CInt(TimePeriod.Month))
+                                                                    options.Add().Text("By Quarter").Value(CInt(TimePeriod.Quarter))
+                                                                    options.Add().Text("By Month").Value(CInt(TimePeriod.Month))
                                                                 End Sub)
-                                          End Sub)
-             End Sub)
+                                              End Sub)
+                     End Sub)
 )
 
 @(Html.Kendo().Grid(Of DeliveryTicketsDashboardGridRowModel) _
@@ -265,13 +265,17 @@ End Code
     .Sortable() _
     .Pageable() _
     .Columns(Sub(c)
-                     c.Bound(Function(dt) dt.DeliveryTicketID).Filterable(FilterableType.NumericId)
-                     c.Bound(Function(dt) dt.CustomerName)
-                     c.Bound(Function(dt) dt.LeaseName)
-                     c.Bound(Function(dt) dt.WellNumber)
-                     c.Bound(Function(dt) dt.TicketDate).Format("{0:d}")
-                     c.Bound(Function(dt) dt.Cost).Format("{0:c}").Filterable(FilterableType.RoundedDecimal)
-                     c.Template(@@<text></text>).ClientTemplate(
+        c.Bound(Function(dt) dt.DeliveryTicketID).Filterable(FilterableType.NumericId) _
+            .ClientTemplate(
+            "#=DeliveryTicketID#" &
+            "#if(IsSignificantDesignChange){#<i title=""Significant design change"" class=""status-flag fa fa-exclamation""></i>#}#"
+            )
+        c.Bound(Function(dt) dt.CustomerName)
+        c.Bound(Function(dt) dt.LeaseName)
+        c.Bound(Function(dt) dt.WellNumber)
+        c.Bound(Function(dt) dt.TicketDate).Format("{0:d}")
+        c.Bound(Function(dt) dt.Cost).Format("{0:c}").Filterable(FilterableType.RoundedDecimal)
+        c.Template(@@<text></text>).ClientTemplate(
                                     "<a href=""" & Url.Action("Details", "DeliveryTicket") & "/#=DeliveryTicketID#"" target=""_blank"" class=""k-button k-button-icontext"">View Ticket</a>"
                                   )
     End Sub) _

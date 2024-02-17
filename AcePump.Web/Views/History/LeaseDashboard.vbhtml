@@ -259,27 +259,31 @@ End Section
 )
 
 @(Html.Kendo().Grid(Of PartInspectionDashboardGridRowModel)() _
-        .Name("recordsGrid") _
-        .Filterable() _
-        .Sortable() _
-        .Pageable() _
-        .ToolBar(Sub(s)
-                         s.Custom().Text("Export to Excel").HtmlAttributes(New With {.class = "k-grid-excel-workaround"})
-                 End Sub) _
-        .Excel(Sub(excel)
-                       excel.FileName("Lease Dashboard Export " & Date.Now.ToShortDateString() & ".xlsx")
-                       excel.Filterable(False)
-                       excel.AllPages(True)
-               End Sub) _
-        .AutoBind(queryOnLoad) _
-        .Columns(Sub(c)
-                         c.Bound(Function(pi) pi.DeliveryTicketID).Title("Ticket #").Filterable(FilterableType.NumericId)
-                         c.Bound(Function(pi) pi.ApiNumber).Title("API #")
-                         c.Bound(Function(pi) pi.LeaseName)
-                         c.Bound(Function(pi) pi.WellNumber)
-                         c.Bound(Function(pi) pi.TicketDate).Format("{0:d}")
-                         c.Bound(Function(pi) pi.Cost).Format("{0:c}").Filterable(FilterableType.RoundedDecimal)
-                         c.Template(@@<text></text>).ClientTemplate(
+                    .Name("recordsGrid") _
+                    .Filterable() _
+                    .Sortable() _
+                    .Pageable() _
+                    .ToolBar(Sub(s)
+                                 s.Custom().Text("Export to Excel").HtmlAttributes(New With {.class = "k-grid-excel-workaround"})
+                             End Sub) _
+                    .Excel(Sub(excel)
+                               excel.FileName("Lease Dashboard Export " & Date.Now.ToShortDateString() & ".xlsx")
+                               excel.Filterable(False)
+                               excel.AllPages(True)
+                           End Sub) _
+                    .AutoBind(queryOnLoad) _
+                    .Columns(Sub(c)
+            c.Bound(Function(pi) pi.DeliveryTicketID).Title("Ticket #").Filterable(FilterableType.NumericId) _
+                .ClientTemplate(
+                "#=DeliveryTicketID#" &
+                "#if(IsSignificantDesignChange){#<i title=""Significant design change"" class=""status-flag fa fa-exclamation""></i>#}#"
+                )
+            c.Bound(Function(pi) pi.ApiNumber).Title("API #")
+            c.Bound(Function(pi) pi.LeaseName)
+            c.Bound(Function(pi) pi.WellNumber)
+            c.Bound(Function(pi) pi.TicketDate).Format("{0:d}")
+            c.Bound(Function(pi) pi.Cost).Format("{0:c}").Filterable(FilterableType.RoundedDecimal)
+            c.Template(@@<text></text>).ClientTemplate(
                                         "<a href=""" & Url.Action("Details", "DeliveryTicket") & "/#=DeliveryTicketID#"" target=""_blank"" class=""k-button k-button-icontext"">View Ticket</a>"
                                       )
     End Sub) _

@@ -193,19 +193,23 @@ End Code
 *@
 
 @(Html.Kendo().Grid(Of DeliveryTicketsDashboardGridRowModel) _
-    .Name("recordsGrid") _
-    .Filterable() _
-    .Sortable() _
-    .Pageable() _
-    .AutoBind(queryOnLoad) _
-    .Columns(Sub(c)
-                     c.Bound(Function(dt) dt.DeliveryTicketID).Filterable(FilterableType.NumericId)
-                     c.Bound(Function(dt) dt.CustomerName)
-                     c.Bound(Function(dt) dt.LeaseName)
-                     c.Bound(Function(dt) dt.WellNumber)
-                     c.Bound(Function(dt) dt.TicketDate).Format("{0:d}")
-                     c.Bound(Function(dt) dt.Cost).Format("{0:c}").Filterable(FilterableType.RoundedDecimal)
-                     c.Template(@@<text></text>).ClientTemplate(
+                .Name("recordsGrid") _
+                .Filterable() _
+                .Sortable() _
+                .Pageable() _
+                .AutoBind(queryOnLoad) _
+                .Columns(Sub(c)
+              c.Bound(Function(dt) dt.DeliveryTicketID).Filterable(FilterableType.NumericId) _
+                    .ClientTemplate(
+                    "#=DeliveryTicketID#" &
+                    "#if(IsSignificantDesignChange){#<i title=""Significant design change"" class=""status-flag fa fa-exclamation""></i>#}#"
+                    )
+              c.Bound(Function(dt) dt.CustomerName)
+              c.Bound(Function(dt) dt.LeaseName)
+              c.Bound(Function(dt) dt.WellNumber)
+              c.Bound(Function(dt) dt.TicketDate).Format("{0:d}")
+              c.Bound(Function(dt) dt.Cost).Format("{0:c}").Filterable(FilterableType.RoundedDecimal)
+              c.Template(@@<text></text>).ClientTemplate(
                                     "<a href=""" & Url.Action("Details", "DeliveryTicket") & "/#=DeliveryTicketID#"" target=""_blank"" class=""k-button k-button-icontext"">View Ticket</a>"
                                   )
     End Sub) _
