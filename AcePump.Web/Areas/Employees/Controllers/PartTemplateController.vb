@@ -183,7 +183,19 @@ Namespace Areas.Employees.Controllers
                     DataSource.PartTemplates.LoadChanges(model)
 
                     If priceChanged Then
+
                         partTemplate.PriceLastUpdated = Today
+                        hasConflict = DataSource.PartTemplates.Any(Function(x) x.Number = model.Number And x.PartTemplateID <> model.PartTemplateID)
+                        'FIND ASSEMBLIES WITH THIS PART
+                        Dim assemblies = DataSource.AssembliesWithRelatedParts.Where(Function(x) x.Assembly.Parts.Any(Function(part) part.PartTemplateID = partTemplate.PartTemplateID))
+                        For Each assembly In assemblies
+                            Dim assemblyCost = assembly.Assembly.Parts.Sum(Function(x) x.PartsQuantity * x.PartTemplate.Cost)
+                            If assembly.PartTemplate.Cost <> assemblyCost And assembly.PartTemplate.Number.Contains("NEWPUMP") Then
+                                assembly.PartTemplate.Cost = assemblyCost
+                                assembly.PartTemplate.PriceLastUpdated = Today
+                            End If
+                        Next
+
                     End If
 
                     DataSource.SaveChanges()
@@ -212,9 +224,7 @@ Namespace Areas.Employees.Controllers
             Else
 
                 For Each viewModel As PartTemplateGridRowModel In parts
-                    Dim updated As PartTemplate = DataSource.PartTemplates.FirstOrDefault(Function(x) x.PartTemplateID.Equals(viewModel.PartTemplateID))
-                    updated.Cost = viewModel.Cost
-                    updated.PriceLastUpdated = Today
+                    JsonEdit(viewModel)
                 Next
 
                 If ModelState.IsValid Then
