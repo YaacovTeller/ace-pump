@@ -79,7 +79,7 @@ End Code
         HelperClass.prototype.Initialize = function() {
             this._WellID = $("#WellID").data("kendoComboBox");
             this._PumpDispatchedID = $("#PumpDispatchedID").data("kendoComboBox");
-
+            $("#QuickbooksInvoiceNumber").prop('readonly', true);;
             this._AttachHandlers();
         };
 
@@ -1210,59 +1210,63 @@ var createAtPosition;
         <div class="editor-label">@Html.LabelFor(Function(model) model.CompletedBy, "Completed By:") </div>
         <div class="editor-field">
             @Html.TypeManagerComboBoxFor(Function(model) model.CompletedBy, "TicketCompletedBy")
-        @Html.ValidationMessageFor(Function(model) model.CompletedBy)
+            @Html.ValidationMessageFor(Function(model) model.CompletedBy)
+        </div>
     </div>
-</div>
-<div class="clear"></div>
-<div class="ticket-additional-data-row-edit">
-    <div class="editor-label">@Html.LabelFor(Function(model) model.RepairedBy, "Repaired By:") </div>
-    <div class="editor-field">
-        @Html.EditorFor(Function(model) model.RepairedBy)
-    @Html.ValidationMessageFor(Function(model) model.RepairedBy)
-</div>
-</div>
-<div class="clear"></div>
-<div class="ticket-additional-data-row-edit">
-    <div class="editor-label">@Html.LabelFor(Function(model) model.DisplaySignatureName, "Signed By:") </div>
-    <div class="editor-field">
-        <span id="DisplaySignature">@(If(Model.DisplaySignatureDate.HasValue, Model.DisplaySignatureName & " " & Model.DisplaySignatureDate.Value.ToString("d"), ""))</span>
+    <div class="clear"></div>
+    <div class="ticket-additional-data-row-edit">
+        <div class="editor-label">@Html.LabelFor(Function(model) model.RepairedBy, "Repaired By:") </div>
+        <div class="editor-field">
+            @Html.EditorFor(Function(model) model.RepairedBy)
+            @Html.ValidationMessageFor(Function(model) model.RepairedBy)
+        </div>
     </div>
-    <div><a class="k-button" id="btnDeleteSignature">Delete Signature</a></div>
-</div>
-<div class="clear"></div>
-<div class="ticket-additional-data-row-edit">
-    <div class="editor-label">@Html.LabelFor(Function(model) model.Quote, "Quote?") </div>
-    <div class="editor-field">
-        @Html.EditorFor(Function(model) model.Quote)
-    @Html.ValidationMessageFor(Function(model) model.Quote)
-</div>
-</div>
-<div class="clear"></div>
-<div class="ticket-additional-data-row-edit">
-    <div class="editor-label">@Html.LabelFor(Function(model) model.InvoiceStatus, "Invoice Status")</div>
+    <div class="clear"></div>
+    <div class="ticket-additional-data-row-edit">
+        <div class="editor-label">@Html.LabelFor(Function(model) model.DisplaySignatureName, "Signed By:") </div>
+        <div class="editor-field">
+            <span id="DisplaySignature">@(If(Model.DisplaySignatureDate.HasValue, Model.DisplaySignatureName & " " & Model.DisplaySignatureDate.Value.ToString("d"), ""))</span>
+        </div>
+        <div><a class="k-button" id="btnDeleteSignature">Delete Signature</a></div>
+    </div>
+    <div class="clear"></div>
+    <div class="ticket-additional-data-row-edit">
+        <div class="editor-label">@Html.LabelFor(Function(model) model.Quote, "Quote?") </div>
+        <div class="editor-field">
+            @Html.EditorFor(Function(model) model.Quote)
+            @Html.ValidationMessageFor(Function(model) model.Quote)
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="ticket-additional-data-row-edit">
+        <div class="editor-label">@Html.LabelFor(Function(model) model.InvoiceStatus, "Invoice Status")</div>
 
-    @If Model.InvoiceStatus = AcePumpInvoiceStatuses.InQuickbooks Then
-        @<div class="display-field" id="invoiceStatusText">@Html.DisplayFor(Function(model) model.InvoiceStatusText)</div>
-        @Html.HiddenFor(Function(model) model.InvoiceStatus)
-    Else
-        @<div class="editor-field">
-            @(Html.Kendo().ComboBoxFor(Function(model) model.InvoiceStatus) _
-                                             .DataTextField("Text") _
-                                             .DataValueField("ID") _
-                                             .Text(Model.InvoiceStatusText) _
-                                             .Events(Function(reader) reader.Change("ComboboxNoFreeText_Change")) _
-                                             .AutoBind(True) _
-                                             .DataSource(Sub(dataSource)
-                                                             dataSource _
-                                                             .Read(Function(reader) reader.Action("InvoiceStatusList", "DeliveryTicket") _
-                                                                                             .Type(HttpVerbs.Post)
-                                                                     ) _
-                                                             .ServerFiltering(True)
-                                                         End Sub)
+        @If Model.InvoiceStatus = AcePumpInvoiceStatuses.InQuickbooks Then
+            @<div class="display-field" id="invoiceStatusText">@Html.DisplayFor(Function(model) model.InvoiceStatusText)</div>
+            @Html.HiddenFor(Function(model) model.InvoiceStatus)
+        Else
+            @<div class="editor-field">
+                @(Html.Kendo().ComboBoxFor(Function(model) model.InvoiceStatus) _
+                                                     .DataTextField("Text") _
+                                                     .DataValueField("ID") _
+                                                     .Text(Model.InvoiceStatusText) _
+                                                     .Events(Function(reader) reader.Change("ComboboxNoFreeText_Change")) _
+                                                     .AutoBind(True) _
+                                                     .DataSource(Sub(dataSource)
+                                                                     dataSource _
+                                                                     .Read(Function(reader) reader.Action("InvoiceStatusList", "DeliveryTicket") _
+                                                                                                     .Type(HttpVerbs.Post)
+                                                                             ) _
+                                                                     .ServerFiltering(True)
+                                                                 End Sub)
         )
-        @Html.ValidationMessageFor(Function(model) model.InvoiceStatus)
-    </div>      End If
-</div>
+                @Html.ValidationMessageFor(Function(model) model.InvoiceStatus)
+            </div>      End If
+    </div>
+    <div>
+        <div class="editor-label">@Html.LabelFor(Function(model) model.QuickbooksInvoiceNumber, "QB#:") </div>
+        <div class="display-field">@Html.EditorFor(Function(model) model.QuickbooksInvoiceNumber)</div>
+    </div>
 </div>
 
 <div class="clear"></div>
