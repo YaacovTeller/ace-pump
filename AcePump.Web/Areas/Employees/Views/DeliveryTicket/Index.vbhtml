@@ -221,7 +221,7 @@ End Code
                     error: function(data) {
                         alert('Could not close the ticket. Please make sure that the correct ticket is selected.');
                     }
-                }); 
+                });
             }
         } else {
             document.location = "@Url.Action("Reopen")/" + deliveryTicket.DeliveryTicketID;
@@ -303,47 +303,44 @@ End Code
     .toggle-filter.toggle-true {
         color: Green;
     }
-    
+
     .toggle-filter.toggle-false {
         color: Red;
     }
-    
+
     .toggle-filter.toggle-either {
         color: rgba(180, 180, 180, 1);
     }
-    
+
     .toggle-filter i {
         font-size: 20px;
         border: none;
     }
-    
+
     .toggle-filter {
         cursor: pointer;
-        
         background-image: none,linear-gradient(to bottom,rgba(255,255,255,0) 0,rgba(255,255,255,.6) 100%);
         background-position: 50% 50%;
-        
         border: 1px solid #c5c5c5;
         border-radius: 4px;
-        
         margin-right: 5px;
         padding: 5px 20px 5px 7px;
     }
-    
-    .toggle-filter:hover {
-        border-color: #b6b6b6;
-        background-color: #bcb4b0;
-    }
-    
-    .toggle-filter:focus {
-        outline: 0;
-    }
-    
+
+        .toggle-filter:hover {
+            border-color: #b6b6b6;
+            background-color: #bcb4b0;
+        }
+
+        .toggle-filter:focus {
+            outline: 0;
+        }
+
     .status-flag {
         font-size: 18px;
         margin-left: 5px;
     }
-    
+
     .filter-bar {
         padding: 10px;
         display: inline;
@@ -359,8 +356,9 @@ End Code
     <button class="toggle-filter" data-field="IsClosed" data-initial-state-name="false"><i class="fa fa-check-square-o"></i> Closed</button>
     <button class="toggle-filter" data-field="IsSigned"><i class="fa fa-clipboard"></i> Signed</button>
     <button class="toggle-filter" data-field="Quote" data-initial-state-name="false"><i class="fa fa-usd"></i> Quote</button>
-    <button class="toggle-filter" data-field="IsDownloadedToQb"><i class="fa fa-download"></i> In QuickBooks&trade;</button>    
+    <button class="toggle-filter" data-field="IsDownloadedToQb"><i class="fa fa-download"></i> In QuickBooks&trade;</button>
     <button class="toggle-filter" data-field="IsReadyForQb"><i class="fa fa-tag"></i> Ready for QuickBooks&trade;</button>
+    <button class="toggle-filter" data-field="IsSignificantDesignChange"><i class="fa fa-exclamation"></i> Significant Design Change</button>
 </fieldset>
 
 @(Html.Kendo().Grid(Of DeliveryTicketGridRowViewModel)() _
@@ -369,20 +367,21 @@ End Code
     .Sortable() _
     .Pageable() _
     .Columns(Sub(c)
-                     c.Bound(Function(dt) dt.DeliveryTicketID).Filterable(FilterableType.NumericId) _
-                                .ClientTemplate(
-                                    "#=DeliveryTicketID#" &
-                                    "#if(IsClosed){#<i class=""status-flag fa fa-check-square-o""></i>#}#" &
-                                    "#if(IsSigned){#<i class=""status-flag fa fa-clipboard""></i>#}#" &
-                                    "#if(Quote){#<i class=""status-flag fa fa-usd""></i>#}#" &
-                                    "#if(IsDownloadedToQb){#<i class=""status-flag fa fa-download""></i>#}#" &
-                                    "#if(IsReadyForQb){#<i class=""status-flag fa fa-tag""></i>#}#"
-                                )
-                     c.Bound(Function(dt) dt.CustomerName)
-                     c.Bound(Function(dt) dt.LocationName)
-                     c.Bound(Function(dt) dt.WellNumber)
-                     c.Bound(Function(dt) dt.TicketDate).Format("{0:d}")
-                     c.Template(@@<text></text>).ClientTemplate(
+        c.Bound(Function(dt) dt.DeliveryTicketID).Filterable(FilterableType.NumericId) _
+                   .ClientTemplate(
+                       "#=DeliveryTicketID#" &
+                       "#if(IsClosed){#<i class=""status-flag fa fa-check-square-o""></i>#}#" &
+                       "#if(IsSigned){#<i class=""status-flag fa fa-clipboard""></i>#}#" &
+                       "#if(Quote){#<i class=""status-flag fa fa-usd""></i>#}#" &
+                       "#if(IsDownloadedToQb){#<i class=""status-flag fa fa-download""></i>#}#" &
+                       "#if(IsReadyForQb){#<i class=""status-flag fa fa-tag""></i>#}#" &
+                       "#if(IsSignificantDesignChange){#<i class=""status-flag fa fa-exclamation""></i>#}#"
+                            )
+        c.Bound(Function(dt) dt.CustomerName)
+        c.Bound(Function(dt) dt.LocationName)
+        c.Bound(Function(dt) dt.WellNumber)
+        c.Bound(Function(dt) dt.TicketDate).Format("{0:d}")
+        c.Template(@@<text></text>).ClientTemplate(
                                         "# if(IsClosed) { #" & _
                                         "<a class=""k-button toggle"">Reopen</a>" & _
                                         "# } else { #" & _
@@ -415,10 +414,10 @@ End Code
                 End Sub)
     )
 
-    
+
 <script id="command-template" type="text/x-kendo-template">
-    
-</script>​
+
+</script>
 
 <script>
     $(document).ready(function () {

@@ -13,5 +13,6 @@
         Public Property IsDownloadedToQb As Boolean
         Public Property IsReadyForQb As Boolean
         Public Property InvoiceStatus As Integer
+        Public Property IsSignificantDesignChange As Boolean
     End Class
 End Namespace

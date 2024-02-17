@@ -887,7 +887,8 @@ Namespace Areas.Employees.Controllers
                                           .Quote = t.Quote.HasValue AndAlso t.Quote.Value,
                                           .IsDownloadedToQb = t.InvoiceStatus = AcePumpInvoiceStatuses.InQuickbooks,
                                           .IsReadyForQb = t.InvoiceStatus = AcePumpInvoiceStatuses.ReadyForQuickbooks And t.CloseTicket = True,
-                                          .InvoiceStatus = t.InvoiceStatus
+                                          .InvoiceStatus = t.InvoiceStatus,
+                                          .IsSignificantDesignChange = t.IsSignificantDesignChange.HasValue And t.IsSignificantDesignChange = True
                                 }) _
                                 .ToDataSourceResult(req)
                         )
