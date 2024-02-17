@@ -1,0 +1,21 @@
+<ion-view title="login" hide-nav-bar="true" style="background-color:#5A4E42;">
+  <ion-content padding="true" class=" manual-remove-top-padding">
+    <div class="padding-bottom padding-top">
+      <img src="img/AcePumpLogoSm.jpg" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+    <div class="padding inlay">
+        <h1 style="color:#000000;text-align:center;" class="padding-bottom">Welcome! {{loginCtrl.subtitle}}</h1>
+      
+        <form name="loginForm" class="list">
+        <label class="item item-input padding-top">
+          <input type="text" placeholder="Username" ng-model="loginCtrl.username" acp-focus-next-on-enter required>
+        </label>
+
+        <label class="item item-input">
+          <input type="password" placeholder="Password" ng-model="loginCtrl.password" acp-focus-next-on-enter required>
+        </label>
+        <button ng-click="loginForm.$valid && loginCtrl.login()" class="button button-positive button-block">Login</button>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

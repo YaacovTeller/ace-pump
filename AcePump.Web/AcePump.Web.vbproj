@@ -97,7 +97,6 @@
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.12.0.5000.0\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -396,6 +395,37 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Content Include="AngularTemplates\mergeWell.html" />
+    <Content Include="app\core\login.html" />
+    <Content Include="app\css\css\app.css" />
+    <Content Include="app\css\lib\ionic\css\ionic.css" />
+    <Content Include="app\css\lib\ionic\css\ionic.min.css" />
+    <Content Include="app\css\lib\signature_pad\example\css\ie9.css" />
+    <Content Include="app\css\lib\signature_pad\example\css\signature-pad.css" />
+    <Content Include="app\index.html" />
+    <Content Include="app\js\jquery.min.js" />
+    <Content Include="app\js\kendo.all.min.js" />
+    <Content Include="app\js\mobileUi.all.js" />
+    <Content Include="app\js\mobileUi.all.min.js" />
+    <Content Include="app\js\mvc.deliveryTicketApp.js" />
+    <Content Include="app\js\mvc.deliveryTicketApp.min.js" />
+    <Content Include="app\js\mvc.inventoryApp.js" />
+    <Content Include="app\js\mvc.inventoryApp.min.js" />
+    <Content Include="app\js\mvc.inventoryCustomerApp.js" />
+    <Content Include="app\js\mvc.inventoryCustomerApp.min.js" />
+    <Content Include="app\js\mvc.pumpPrefixApp.js" />
+    <Content Include="app\js\mvc.pumpPrefixApp.min.js" />
+    <Content Include="app\js\mvc.repairTicketApp.js" />
+    <Content Include="app\js\mvc.repairTicketApp.min.js" />
+    <Content Include="app\js\mvc.tearDownApp.js" />
+    <Content Include="app\js\mvc.tearDownApp.min.js" />
+    <Content Include="app\js\mvc.wellApp.js" />
+    <Content Include="app\js\mvc.wellApp.min.js" />
+    <Content Include="app\lib\signature_pad\example\index.html" />
+    <Content Include="app\tickets\details.html" />
+    <Content Include="app\tickets\search.html" />
+    <Content Include="app\tickets\signature.html" />
+    <Content Include="app\tickets\takePicture.html" />
+    <Content Include="app\tickets\viewPicture.html" />
     <Content Include="Areas\Customers\Views\DeliveryTicket\TearDownDetails.vbhtml" />
     <Content Include="Areas\Employees\Views\Part\Inventory.vbhtml" />
     <Content Include="Content\bootstrap.custom.css" />
@@ -911,6 +941,20 @@
     <Content Include="Scripts\Soris.widgets.js" />
     <Content Include="Scripts\Soris.Widgets.min.js" />
     <Content Include="robots.txt" />
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr100.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr100.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Views\History\CustomerDashboard.vbhtml" />
     <Content Include="Areas\Employees\Views\System\Index.vbhtml" />
     <Content Include="Areas\Employees\Views\DeliveryTicket\_LeaseSelector.vbhtml" />
@@ -1191,6 +1235,8 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Views\Shared\EditorTemplates\_CustomerAccess.vbhtml" />
+    <Content Include="Views\Shared\DisplayTemplates\_CustomerAccess.vbhtml" />
     <None Include="Web.Alpha.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1232,6 +1278,30 @@
     <Content Include="Areas\Employees\Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\css\core\" />
+    <Folder Include="app\css\img\" />
+    <Folder Include="app\css\lib\ionic\fonts\" />
+    <Folder Include="app\css\lib\ionic\js\" />
+    <Folder Include="app\css\lib\ionic\scss\ionicons\" />
+    <Folder Include="app\css\lib\ngcordova-wrapper-nativestorage\dist\" />
+    <Folder Include="app\css\lib\ngcordova-wrapper-nativestorage\src\" />
+    <Folder Include="app\css\lib\signature_pad\dist\" />
+    <Folder Include="app\css\lib\signature_pad\example\js\" />
+    <Folder Include="app\css\lib\signature_pad\src\" />
+    <Folder Include="app\css\test-lib\" />
+    <Folder Include="app\css\tickets\" />
+    <Folder Include="app\img\" />
+    <Folder Include="app\lib\ionic\css\" />
+    <Folder Include="app\lib\ionic\fonts\" />
+    <Folder Include="app\lib\ionic\js\" />
+    <Folder Include="app\lib\ionic\scss\ionicons\" />
+    <Folder Include="app\lib\ngcordova-wrapper-nativestorage\dist\" />
+    <Folder Include="app\lib\ngcordova-wrapper-nativestorage\src\" />
+    <Folder Include="app\lib\signature_pad\dist\" />
+    <Folder Include="app\lib\signature_pad\example\css\" />
+    <Folder Include="app\lib\signature_pad\example\js\" />
+    <Folder Include="app\lib\signature_pad\src\" />
+    <Folder Include="app\test-lib\" />
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Employees\Views\Shared\DisplayTemplates\" />
   </ItemGroup>

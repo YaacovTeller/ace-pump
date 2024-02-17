@@ -306,7 +306,6 @@ Global
 		{CC6B1E1A-3CFF-4FF7-A9AD-411B449743CB}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{CC6B1E1A-3CFF-4FF7-A9AD-411B449743CB}.Debug|iOS.ActiveCfg = Debug|x86
 		{CC6B1E1A-3CFF-4FF7-A9AD-411B449743CB}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{CC6B1E1A-3CFF-4FF7-A9AD-411B449743CB}.Debug|Mixed Platforms.Build.0 = Debug|x86
 		{CC6B1E1A-3CFF-4FF7-A9AD-411B449743CB}.Debug|Windows-ARM.ActiveCfg = Debug|x86
 		{CC6B1E1A-3CFF-4FF7-A9AD-411B449743CB}.Debug|Windows-x64.ActiveCfg = Debug|x86
 		{CC6B1E1A-3CFF-4FF7-A9AD-411B449743CB}.Debug|Windows-x86.ActiveCfg = Debug|x86

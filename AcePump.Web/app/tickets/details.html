@@ -1,0 +1,59 @@
+<ion-view title="details" hide-nav-bar="true" style="background-color:#5A4E42;">
+    <ion-content padding="true">
+        <div class="inlay">
+            <h3 class="padding-top inlay-text">{{detailsCtrl.currentTicket.DeliveryTicketID}} - {{detailsCtrl.currentTicket.CustomerName}}</h3>
+            <h4 class="inlay-text">{{detailsCtrl.currentTicket.LeaseName}} {{detailsCtrl.currentTicket.WellNumber}} {{detailsCtrl.currentTicket.TicketDate | date:'shortDate'}}</h4>
+            <div class="show-list-numbers-and-dots padding-left">
+                <p class="inlay-text">
+                    Pump Failed: {{detailsCtrl.currentTicket.PumpFailedPrefix}}{{detailsCtrl.currentTicket.PumpFailedNumber}}
+                </p>
+                <p class="inlay-text">
+                    Closed Ticket? {{detailsCtrl.currentTicket.CloseTicket ? "Yes" : "No"}}
+                </p>
+                <p class="inlay-text" ng-show="!detailsCtrl.currentTicket.CloseTicket">
+                    Reason Still Open: {{detailsCtrl.currentTicket.ReasonStillOpen}}
+                </p>
+                <p class="inlay-text">
+                    Signed: {{detailsCtrl.currentTicket.HasSignature ? "Yes" : "No"}}
+                </p>
+                <p class="inlay-text">
+                    <a class="button button-positive button-clear" acp-api-href="detailsCtrl.getPdfHref()">
+                        View PDF
+                    </a>
+                </p>
+            </div>
+            <div class="padding">
+                <a ui-sref="top.signature({deliveryTicketId : detailsCtrl.currentTicket.DeliveryTicketID})" class="button button-positive button-outline">
+                    {{detailsCtrl.currentTicket.HasSignature ? "View / Change Signature" : "Sign This Ticket"}}</a>
+            </div>
+        </div>
+        <ion-list>
+            <ion-item class="item item-thumbnail-left item-button-right" ng-repeat="image in detailsCtrl.images">
+                <img acp-api-src="detailsCtrl.getSmallImageSrc(image)" acp-Img-Modal-On-Tap="detailsCtrl.getLargeImageSrc(image)"  alt="Uploaded Image">
+                <h2>{{image.UploadedOn | date:'shortDate'
+                    }} - {{image.UploadedBy}}</h2>
+                    <p class="padding" style="white-space:normal;">
+                        {{image.Note}}
+                    </p>
+                    <div class="buttons" style="top:0; bottom:0;">
+                        <button class="button button-balanced" ng-click="detailsCtrl.editNote(image)">
+                            <i class="icon icon ion-edit"></i>
+                        </button>
+                        <button class="button button-assertive" ng-click="detailsCtrl.deleteImage(image)">
+                            <i class="icon icon ion-close-round"></i>
+                        </button>
+                    </div>
+                    </ion-item>
+                    </ion-list>
+                    <h2 ng-show="!detailsCtrl.images.length" style="color:white;text-align:center;">No images found.</h2>
+</ion-content>
+
+
+    <ion-footer-bar class="bar">
+        <div class="button-bar">
+            <a ng-click="$ionicGoBack()" class="button icon ion-chevron-left"></a>
+            <a ui-sref="top.takePicture({deliveryTicketId : detailsCtrl.currentTicket.DeliveryTicketID})" class="button icon ion-android-camera"></a>
+            <a ui-sref="top.logout" class="button button-positive button-clear">Logout</a>
+        </div>
+    </ion-footer-bar>
+</ion-view>
