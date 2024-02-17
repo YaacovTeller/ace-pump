@@ -295,6 +295,7 @@ Namespace Controllers
                                            .WellNumber = If(ticket.Well IsNot Nothing, ticket.Well.WellNumber, ""),
                                            .LeaseName = If(ticket.Well IsNot Nothing, ticket.Well.Lease.LocationName, ""),
                                            .TicketDate = ticket.TicketDate,
+                                           .IsSignificantDesignChange = ticket.IsSignificantDesignChange.HasValue And ticket.IsSignificantDesignChange = True,
                                            .Cost = ticket.LineItems _
                                                     .Select(Function(x) x.UnitPrice * (1 - x.UnitDiscount) _
                                                                            * x.Quantity _
@@ -353,6 +354,7 @@ Namespace Controllers
                                                .PartDescription = If(x.inspection.PartFailed IsNot Nothing, x.inspection.PartFailed.Description, ""),
                                                .ReasonRepaired = x.inspection.ReasonRepaired,
                                                .TicketDate = x.inspection.DeliveryTicket.TicketDate,
+                                               .IsSignificantDesignChange = x.inspection.DeliveryTicket.IsSignificantDesignChange.HasValue And x.inspection.DeliveryTicket.IsSignificantDesignChange = True,
                                                .Cost = If(x.lineItemIfExists IsNot Nothing, x.lineItemIfExists.LineTotal.Computed(), 0D)
                                            }) _
                                    .Decompile() _
