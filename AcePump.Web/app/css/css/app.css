@@ -1,0 +1,75 @@
+﻿.inlay{
+    background-color: white;
+}
+
+.inlay-text {
+    color: #000000;
+    text-align: center;
+}
+
+/* PRELOAD */
+.preload-wait-view.loaded {
+    display: none;
+}
+
+.preload-wait-view {
+    background-color: #f9efed;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.preload-content-logo {
+    margin-top: 100px;
+    height: 80%;
+
+    background-image: url(/img/AcePumpLogoSm.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    opacity: 1;
+
+    animation: blink 3s linear infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        opacity: 0;
+    }
+}
+
+.search-box{
+    width:150px;
+}
+
+#line-items-table {
+    clear: both;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+#line-items-table td, #line-items-table th {
+    border: 1px solid black;
+    padding: 4px;
+}
+
+.signature-details {
+    background-color: white;    
+    padding: 10px 10px 5px 10px;
+}
+
+.signature-pad {
+    width: 90%;
+    height: 180px;
+    border: 1px solid black;
+}
+
+.signature-area {
+    padding-top: 5px;
+}
+
+.signature-clear-button {
+    width: 90%;
+}
+
+
